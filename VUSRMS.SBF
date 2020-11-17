@@ -1,0 +1,2014 @@
+* ¦¦¦¦¦¦ SBF SOURCE VUSRMS                                                      
+VUSR    TITLE  'V U S R M S     ( 0 1 . 1 2 )   -   V I E W   V O P E RXVUSR0001
+                I D   U S E R   F I L E                     '           VUSR0002
+VUSRMS  DFHMSD TYPE=&SYSPARM,                                          XVUSR0003
+               STORAGE=AUTO,                                           XVUSR0004
+               DATA=FIELD,                                             XVUSR0005
+               DSATTS=(COLOR,HILIGHT),                                 XVUSR0006
+               LANG=COBOL,                                             XVUSR0007
+               MAPATTS=(COLOR,HILIGHT),                                XVUSR0008
+               MODE=INOUT,                                             XVUSR0009
+               TERM=3270,                                              XVUSR0010
+               TIOAPFX=YES                                              VUSR0011
+*                                                                       VUSR0012
+        PRINT  ON,GEN                                                   VUSR0013
+        TITLE  'L I S T M A P   ( 0 1 . 3 6 )   -   D E F A U L T   L IXVUSR0014
+                S T   M A P   F O R   1 3 2   C O L U M N S '           VUSR0015
+LISTMAP DFHMDI SIZE=(27,132)                                            VUSR0016
+*              ROW=07,THRU=07,OCCURS=18                                 VUSR0017
+        PRINT  ON,NOGEN                                                 VUSR0018
+        DFHMDF POS=(01,001),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0019
+               INITIAL='VUSR    ',                                     XVUSR0020
+               COLOR=BLUE                                               VUSR0021
+LIST-COMPANY DFHMDF                                                    XVUSR0022
+               POS=(01,046),LENGTH=040,ATTRB=(ASKIP,BRT),              XVUSR0023
+               COLOR=TURQUOISE                                          VUSR0024
+LIST-SYSDATE DFHMDF                                                    XVUSR0025
+               POS=(01,121),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0026
+               INITIAL='mm/dd/yyyy',                                   XVUSR0027
+               COLOR=BLUE                                               VUSR0028
+LIST-NETNAME DFHMDF                                                    XVUSR0029
+               POS=(02,001),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0030
+               COLOR=BLUE                                               VUSR0031
+LIST-TITLE DFHMDF                                                      XVUSR0032
+               POS=(02,046),LENGTH=040,ATTRB=(ASKIP,BRT),              XVUSR0033
+               INITIAL='       View VUSERID File Listing        '       VUSR0034
+LIST-SYSTIME DFHMDF                                                    XVUSR0035
+               POS=(02,121),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0036
+               INITIAL='hh:mm xx',                                     XVUSR0037
+               COLOR=BLUE                                               VUSR0038
+        DFHMDF POS=(03,001),LENGTH=001,ATTRB=(PROT,BRT),INITIAL=' '     VUSR0039
+        DFHMDF POS=(04,084),LENGTH=009,ATTRB=(ASKIP,NORM),             XVUSR0040
+               INITIAL='-Primary-',                                    XVUSR0041
+               COLOR=TURQUOISE                                          VUSR0042
+        DFHMDF POS=(04,094),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0043
+               INITIAL='----------- W I N ------------',               XVUSR0044
+               COLOR=TURQUOISE                                          VUSR0045
+        DFHMDF POS=(04,125),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0046
+               INITIAL='Svc',                                          XVUSR0047
+               COLOR=TURQUOISE                                          VUSR0048
+        DFHMDF POS=(04,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0049
+               INITIAL='Rpt',                                          XVUSR0050
+               COLOR=TURQUOISE                                          VUSR0051
+        DFHMDF POS=(05,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0052
+               INITIAL='O',                                            XVUSR0053
+               COLOR=TURQUOISE,                                        XVUSR0054
+               HILIGHT=UNDERLINE                                        VUSR0055
+        DFHMDF POS=(05,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0056
+        DFHMDF POS=(05,005),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0057
+               INITIAL=' Userid ',                                     XVUSR0058
+               COLOR=TURQUOISE,                                        XVUSR0059
+               HILIGHT=UNDERLINE                                        VUSR0060
+        DFHMDF POS=(05,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0061
+        DFHMDF POS=(05,016),LENGTH=004,ATTRB=(ASKIP,NORM),             XVUSR0062
+               INITIAL='Oper',                                         XVUSR0063
+               COLOR=TURQUOISE,                                        XVUSR0064
+               HILIGHT=UNDERLINE                                        VUSR0065
+        DFHMDF POS=(05,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0066
+        DFHMDF POS=(05,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0067
+               INITIAL='          User Name           ',               XVUSR0068
+               COLOR=TURQUOISE,                                        XVUSR0069
+               HILIGHT=UNDERLINE                                        VUSR0070
+        DFHMDF POS=(05,054),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0071
+               INITIAL='Class',                                        XVUSR0072
+               COLOR=TURQUOISE,                                        XVUSR0073
+               HILIGHT=UNDERLINE                                        VUSR0074
+        DFHMDF POS=(05,060),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0075
+               INITIAL='DAP',                                          XVUSR0076
+               COLOR=TURQUOISE,                                        XVUSR0077
+               HILIGHT=UNDERLINE                                        VUSR0078
+        DFHMDF POS=(05,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0079
+               INITIAL='Ind.List',                                     XVUSR0080
+               COLOR=TURQUOISE,                                        XVUSR0081
+               HILIGHT=UNDERLINE                                        VUSR0082
+        DFHMDF POS=(05,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0083
+               INITIAL='Ind.Auth',                                     XVUSR0084
+               COLOR=TURQUOISE,                                        XVUSR0085
+               HILIGHT=UNDERLINE                                        VUSR0086
+        DFHMDF POS=(05,082),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0087
+        DFHMDF POS=(05,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0088
+               INITIAL='Comp#',                                        XVUSR0089
+               COLOR=TURQUOISE,                                        XVUSR0090
+               HILIGHT=UNDERLINE                                        VUSR0091
+        DFHMDF POS=(05,090),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0092
+               INITIAL='Ind',                                          XVUSR0093
+               COLOR=TURQUOISE,                                        XVUSR0094
+               HILIGHT=UNDERLINE                                        VUSR0095
+        DFHMDF POS=(05,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0096
+               INITIAL='Fnc',                                          XVUSR0097
+               COLOR=TURQUOISE,                                        XVUSR0098
+               HILIGHT=UNDERLINE                                        VUSR0099
+        DFHMDF POS=(05,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0100
+               INITIAL='   Unit',                                      XVUSR0101
+               COLOR=TURQUOISE,                                        XVUSR0102
+               HILIGHT=UNDERLINE                                        VUSR0103
+        DFHMDF POS=(05,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0104
+               INITIAL=' Org ',                                        XVUSR0105
+               COLOR=TURQUOISE,                                        XVUSR0106
+               HILIGHT=UNDERLINE                                        VUSR0107
+        DFHMDF POS=(05,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0108
+               INITIAL=' Pos ',                                        XVUSR0109
+               COLOR=TURQUOISE,                                        XVUSR0110
+               HILIGHT=UNDERLINE                                        VUSR0111
+        DFHMDF POS=(05,121),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0112
+               INITIAL='Dir',                                          XVUSR0113
+               COLOR=TURQUOISE,                                        XVUSR0114
+               HILIGHT=UNDERLINE                                        VUSR0115
+        DFHMDF POS=(05,125),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0116
+               INITIAL='Rgn',                                          XVUSR0117
+               COLOR=TURQUOISE,                                        XVUSR0118
+               HILIGHT=UNDERLINE                                        VUSR0119
+        DFHMDF POS=(05,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0120
+               INITIAL='Rmt',                                          XVUSR0121
+               COLOR=TURQUOISE,                                        XVUSR0122
+               HILIGHT=UNDERLINE                                        VUSR0123
+        DFHMDF POS=(06,001),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0124
+LIST-USERID-SKIPTO DFHMDF                                              XVUSR0125
+               POS=(06,005),LENGTH=008,ATTRB=(UNPROT,NORM,IC),         XVUSR0126
+               COLOR=YELLOW,                                           XVUSR0127
+               HILIGHT=UNDERLINE                                        VUSR0128
+        DFHMDF POS=(06,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0129
+LIST-OPERID-SKIPTO DFHMDF                                              XVUSR0130
+               POS=(06,016),LENGTH=004,ATTRB=(UNPROT,NORM),            XVUSR0131
+               COLOR=YELLOW,                                           XVUSR0132
+               HILIGHT=UNDERLINE                                        VUSR0133
+        DFHMDF POS=(06,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0134
+LIST-USERNM-FILTER DFHMDF                                              XVUSR0135
+               POS=(06,023),LENGTH=030,ATTRB=(UNPROT,NORM),            XVUSR0136
+               COLOR=GREEN,                                            XVUSR0137
+               HILIGHT=UNDERLINE                                        VUSR0138
+        DFHMDF POS=(06,054),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0139
+LIST-CLASS-FILTER DFHMDF                                               XVUSR0140
+               POS=(06,056),LENGTH=002,ATTRB=(UNPROT,NORM),            XVUSR0141
+               COLOR=GREEN,                                            XVUSR0142
+               HILIGHT=UNDERLINE                                        VUSR0143
+        DFHMDF POS=(06,059),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0144
+LIST-DAPSCO-FILTER DFHMDF                                              XVUSR0145
+               POS=(06,061),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0146
+               COLOR=GREEN,                                            XVUSR0147
+               HILIGHT=UNDERLINE                                        VUSR0148
+        DFHMDF POS=(06,063),LENGTH=000,ATTRB=(ASKIP,BRT)                VUSR0149
+LIST-IND-LIST-FILTER DFHMDF                                            XVUSR0150
+               POS=(06,064),LENGTH=008,ATTRB=(UNPROT,NORM),            XVUSR0151
+               COLOR=GREEN,                                            XVUSR0152
+               HILIGHT=UNDERLINE                                        VUSR0153
+LIST-IND-AUTH-FILTER DFHMDF                                            XVUSR0154
+               POS=(06,073),LENGTH=008,ATTRB=(UNPROT,NORM),            XVUSR0155
+               COLOR=GREEN,                                            XVUSR0156
+               HILIGHT=UNDERLINE                                        VUSR0157
+        DFHMDF POS=(06,082),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0158
+LIST-PRIME-CO-FILTER DFHMDF                                            XVUSR0159
+               POS=(06,084),LENGTH=005,ATTRB=(UNPROT,NORM),            XVUSR0160
+               COLOR=GREEN,                                            XVUSR0161
+               HILIGHT=UNDERLINE                                        VUSR0162
+        DFHMDF POS=(06,090),LENGTH=000,ATTRB=(ASKIP,BRT)                VUSR0163
+LIST-PRIME-IND-FILTER DFHMDF                                           XVUSR0164
+               POS=(06,091),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0165
+               COLOR=GREEN,                                            XVUSR0166
+               HILIGHT=UNDERLINE                                        VUSR0167
+        DFHMDF POS=(06,093),LENGTH=000,ATTRB=(ASKIP,BRT)                VUSR0168
+LIST-WIN-FUNC-FILTER DFHMDF                                            XVUSR0169
+               POS=(06,094),LENGTH=003,ATTRB=(UNPROT,NORM),            XVUSR0170
+               COLOR=GREEN,                                            XVUSR0171
+               HILIGHT=UNDERLINE                                        VUSR0172
+LIST-WIN-UNIT-FILTER DFHMDF                                            XVUSR0173
+               POS=(06,098),LENGTH=010,ATTRB=(UNPROT,NORM),            XVUSR0174
+               COLOR=GREEN,                                            XVUSR0175
+               HILIGHT=UNDERLINE                                        VUSR0176
+LIST-WIN-ORG-FILTER DFHMDF                                             XVUSR0177
+               POS=(06,109),LENGTH=005,ATTRB=(UNPROT,NORM),            XVUSR0178
+               COLOR=GREEN,                                            XVUSR0179
+               HILIGHT=UNDERLINE                                        VUSR0180
+LIST-WIN-POS-FILTER DFHMDF                                             XVUSR0181
+               POS=(06,115),LENGTH=005,ATTRB=(UNPROT,NORM),            XVUSR0182
+               COLOR=GREEN,                                            XVUSR0183
+               HILIGHT=UNDERLINE                                        VUSR0184
+        DFHMDF POS=(06,121),LENGTH=000,ATTRB=(ASKIP,BRT)                VUSR0185
+LIST-WIN-DIR-FILTER DFHMDF                                             XVUSR0186
+               POS=(06,122),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0187
+               COLOR=GREEN,                                            XVUSR0188
+               HILIGHT=UNDERLINE                                        VUSR0189
+        DFHMDF POS=(06,124),LENGTH=000,ATTRB=(ASKIP,BRT)                VUSR0190
+LIST-REGION-FILTER DFHMDF                                              XVUSR0191
+               POS=(06,125),LENGTH=002,ATTRB=(UNPROT,NORM),            XVUSR0192
+               COLOR=GREEN,                                            XVUSR0193
+               HILIGHT=UNDERLINE                                        VUSR0194
+        DFHMDF POS=(06,128),LENGTH=000,ATTRB=(ASKIP,BRT)                VUSR0195
+LIST-REMOTE-FILTER DFHMDF                                              XVUSR0196
+               POS=(06,129),LENGTH=003,ATTRB=(UNPROT,NORM),            XVUSR0197
+               COLOR=GREEN,                                            XVUSR0198
+               HILIGHT=UNDERLINE                                        VUSR0199
+LIST-SELECT DFHMDF                                                     XVUSR0200
+               POS=(07,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0201
+               COLOR=YELLOW,                                           XVUSR0202
+               HILIGHT=UNDERLINE                                        VUSR0203
+        DFHMDF POS=(07,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0204
+LIST-USERID DFHMDF                                                     XVUSR0205
+               POS=(07,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0206
+               COLOR=YELLOW                                             VUSR0207
+        DFHMDF POS=(07,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0208
+LIST-OPERID DFHMDF                                                     XVUSR0209
+               POS=(07,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0210
+               COLOR=GREEN                                              VUSR0211
+        DFHMDF POS=(07,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0212
+LIST-USERNM DFHMDF                                                     XVUSR0213
+               POS=(07,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0214
+               COLOR=GREEN                                              VUSR0215
+LIST-CLASS DFHMDF                                                      XVUSR0216
+               POS=(07,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0217
+               COLOR=BLUE                                               VUSR0218
+LIST-DAPSCO DFHMDF                                                     XVUSR0219
+               POS=(07,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0220
+               COLOR=BLUE                                               VUSR0221
+LIST-IND-LIST DFHMDF                                                   XVUSR0222
+               POS=(07,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0223
+               COLOR=BLUE                                               VUSR0224
+LIST-IND-AUTH DFHMDF                                                   XVUSR0225
+               POS=(07,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0226
+               COLOR=BLUE                                               VUSR0227
+LIST-PRIMARY-CO DFHMDF                                                 XVUSR0228
+               POS=(07,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0229
+               COLOR=BLUE                                               VUSR0230
+LIST-PRIMARY-IND DFHMDF                                                XVUSR0231
+               POS=(07,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0232
+               COLOR=BLUE                                               VUSR0233
+LIST-WIN-FUNCTION DFHMDF                                               XVUSR0234
+               POS=(07,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0235
+               COLOR=BLUE                                               VUSR0236
+LIST-WIN-UNIT DFHMDF                                                   XVUSR0237
+               POS=(07,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0238
+               COLOR=BLUE                                               VUSR0239
+LIST-WIN-ORG DFHMDF                                                    XVUSR0240
+               POS=(07,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0241
+               COLOR=BLUE                                               VUSR0242
+LIST-WIN-POSITION DFHMDF                                               XVUSR0243
+               POS=(07,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0244
+               COLOR=BLUE                                               VUSR0245
+LIST-WIN-DIRECTOR DFHMDF                                               XVUSR0246
+               POS=(07,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0247
+               COLOR=BLUE                                               VUSR0248
+LIST-SVC-REGION DFHMDF                                                 XVUSR0249
+               POS=(07,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0250
+               COLOR=BLUE                                               VUSR0251
+LIST-RPT-REMOTE DFHMDF                                                 XVUSR0252
+               POS=(07,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0253
+               COLOR=BLUE                                               VUSR0254
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0255
+F010925 DFHMDF POS=(08,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0256
+               COLOR=YELLOW,                                           XVUSR0257
+               HILIGHT=UNDERLINE                                        VUSR0258
+        DFHMDF POS=(08,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0259
+* CBLDNM LABEL=LIST-USERID                                              VUSR0260
+F010929 DFHMDF POS=(08,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0261
+               COLOR=YELLOW                                             VUSR0262
+        DFHMDF POS=(08,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0263
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0264
+F010940 DFHMDF POS=(08,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0265
+               COLOR=GREEN                                              VUSR0266
+        DFHMDF POS=(08,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0267
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0268
+F010947 DFHMDF POS=(08,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0269
+               COLOR=GREEN                                              VUSR0270
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0271
+F010980 DFHMDF POS=(08,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0272
+               COLOR=BLUE                                               VUSR0273
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0274
+F010985 DFHMDF POS=(08,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0275
+               COLOR=BLUE                                               VUSR0276
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0277
+F010988 DFHMDF POS=(08,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0278
+               COLOR=BLUE                                               VUSR0279
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0280
+F010997 DFHMDF POS=(08,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0281
+               COLOR=BLUE                                               VUSR0282
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0283
+F011008 DFHMDF POS=(08,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0284
+               COLOR=BLUE                                               VUSR0285
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0286
+F011015 DFHMDF POS=(08,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0287
+               COLOR=BLUE                                               VUSR0288
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0289
+F011018 DFHMDF POS=(08,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0290
+               COLOR=BLUE                                               VUSR0291
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0292
+F011022 DFHMDF POS=(08,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0293
+               COLOR=BLUE                                               VUSR0294
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0295
+F011033 DFHMDF POS=(08,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0296
+               COLOR=BLUE                                               VUSR0297
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0298
+F011039 DFHMDF POS=(08,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0299
+               COLOR=BLUE                                               VUSR0300
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0301
+F011046 DFHMDF POS=(08,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0302
+               COLOR=BLUE                                               VUSR0303
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0304
+F011049 DFHMDF POS=(08,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0305
+               COLOR=BLUE                                               VUSR0306
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0307
+F011053 DFHMDF POS=(08,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0308
+               COLOR=BLUE                                               VUSR0309
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0310
+F011057 DFHMDF POS=(09,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0311
+               COLOR=YELLOW,                                           XVUSR0312
+               HILIGHT=UNDERLINE                                        VUSR0313
+        DFHMDF POS=(09,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0314
+* CBLDNM LABEL=LIST-USERID                                              VUSR0315
+F011061 DFHMDF POS=(09,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0316
+               COLOR=YELLOW                                             VUSR0317
+        DFHMDF POS=(09,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0318
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0319
+F011072 DFHMDF POS=(09,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0320
+               COLOR=GREEN                                              VUSR0321
+        DFHMDF POS=(09,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0322
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0323
+F011079 DFHMDF POS=(09,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0324
+               COLOR=GREEN                                              VUSR0325
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0326
+F011112 DFHMDF POS=(09,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0327
+               COLOR=BLUE                                               VUSR0328
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0329
+F011117 DFHMDF POS=(09,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0330
+               COLOR=BLUE                                               VUSR0331
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0332
+F011120 DFHMDF POS=(09,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0333
+               COLOR=BLUE                                               VUSR0334
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0335
+F011129 DFHMDF POS=(09,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0336
+               COLOR=BLUE                                               VUSR0337
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0338
+F011140 DFHMDF POS=(09,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0339
+               COLOR=BLUE                                               VUSR0340
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0341
+F011147 DFHMDF POS=(09,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0342
+               COLOR=BLUE                                               VUSR0343
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0344
+F011150 DFHMDF POS=(09,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0345
+               COLOR=BLUE                                               VUSR0346
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0347
+F011154 DFHMDF POS=(09,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0348
+               COLOR=BLUE                                               VUSR0349
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0350
+F011165 DFHMDF POS=(09,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0351
+               COLOR=BLUE                                               VUSR0352
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0353
+F011171 DFHMDF POS=(09,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0354
+               COLOR=BLUE                                               VUSR0355
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0356
+F011178 DFHMDF POS=(09,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0357
+               COLOR=BLUE                                               VUSR0358
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0359
+F011181 DFHMDF POS=(09,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0360
+               COLOR=BLUE                                               VUSR0361
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0362
+F011185 DFHMDF POS=(09,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0363
+               COLOR=BLUE                                               VUSR0364
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0365
+F011189 DFHMDF POS=(10,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0366
+               COLOR=YELLOW,                                           XVUSR0367
+               HILIGHT=UNDERLINE                                        VUSR0368
+        DFHMDF POS=(10,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0369
+* CBLDNM LABEL=LIST-USERID                                              VUSR0370
+F011193 DFHMDF POS=(10,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0371
+               COLOR=YELLOW                                             VUSR0372
+        DFHMDF POS=(10,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0373
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0374
+F011204 DFHMDF POS=(10,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0375
+               COLOR=GREEN                                              VUSR0376
+        DFHMDF POS=(10,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0377
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0378
+F011211 DFHMDF POS=(10,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0379
+               COLOR=GREEN                                              VUSR0380
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0381
+F011244 DFHMDF POS=(10,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0382
+               COLOR=BLUE                                               VUSR0383
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0384
+F011249 DFHMDF POS=(10,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0385
+               COLOR=BLUE                                               VUSR0386
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0387
+F011252 DFHMDF POS=(10,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0388
+               COLOR=BLUE                                               VUSR0389
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0390
+F011261 DFHMDF POS=(10,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0391
+               COLOR=BLUE                                               VUSR0392
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0393
+F011272 DFHMDF POS=(10,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0394
+               COLOR=BLUE                                               VUSR0395
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0396
+F011279 DFHMDF POS=(10,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0397
+               COLOR=BLUE                                               VUSR0398
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0399
+F011282 DFHMDF POS=(10,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0400
+               COLOR=BLUE                                               VUSR0401
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0402
+F011286 DFHMDF POS=(10,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0403
+               COLOR=BLUE                                               VUSR0404
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0405
+F011297 DFHMDF POS=(10,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0406
+               COLOR=BLUE                                               VUSR0407
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0408
+F011303 DFHMDF POS=(10,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0409
+               COLOR=BLUE                                               VUSR0410
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0411
+F011310 DFHMDF POS=(10,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0412
+               COLOR=BLUE                                               VUSR0413
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0414
+F011313 DFHMDF POS=(10,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0415
+               COLOR=BLUE                                               VUSR0416
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0417
+F011317 DFHMDF POS=(10,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0418
+               COLOR=BLUE                                               VUSR0419
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0420
+F011321 DFHMDF POS=(11,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0421
+               COLOR=YELLOW,                                           XVUSR0422
+               HILIGHT=UNDERLINE                                        VUSR0423
+        DFHMDF POS=(11,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0424
+* CBLDNM LABEL=LIST-USERID                                              VUSR0425
+F011325 DFHMDF POS=(11,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0426
+               COLOR=YELLOW                                             VUSR0427
+        DFHMDF POS=(11,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0428
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0429
+F011336 DFHMDF POS=(11,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0430
+               COLOR=GREEN                                              VUSR0431
+        DFHMDF POS=(11,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0432
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0433
+F011343 DFHMDF POS=(11,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0434
+               COLOR=GREEN                                              VUSR0435
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0436
+F011376 DFHMDF POS=(11,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0437
+               COLOR=BLUE                                               VUSR0438
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0439
+F011381 DFHMDF POS=(11,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0440
+               COLOR=BLUE                                               VUSR0441
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0442
+F011384 DFHMDF POS=(11,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0443
+               COLOR=BLUE                                               VUSR0444
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0445
+F011393 DFHMDF POS=(11,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0446
+               COLOR=BLUE                                               VUSR0447
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0448
+F011404 DFHMDF POS=(11,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0449
+               COLOR=BLUE                                               VUSR0450
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0451
+F011411 DFHMDF POS=(11,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0452
+               COLOR=BLUE                                               VUSR0453
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0454
+F011414 DFHMDF POS=(11,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0455
+               COLOR=BLUE                                               VUSR0456
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0457
+F011418 DFHMDF POS=(11,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0458
+               COLOR=BLUE                                               VUSR0459
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0460
+F011429 DFHMDF POS=(11,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0461
+               COLOR=BLUE                                               VUSR0462
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0463
+F011435 DFHMDF POS=(11,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0464
+               COLOR=BLUE                                               VUSR0465
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0466
+F011442 DFHMDF POS=(11,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0467
+               COLOR=BLUE                                               VUSR0468
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0469
+F011445 DFHMDF POS=(11,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0470
+               COLOR=BLUE                                               VUSR0471
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0472
+F011449 DFHMDF POS=(11,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0473
+               COLOR=BLUE                                               VUSR0474
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0475
+F011453 DFHMDF POS=(12,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0476
+               COLOR=YELLOW,                                           XVUSR0477
+               HILIGHT=UNDERLINE                                        VUSR0478
+        DFHMDF POS=(12,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0479
+* CBLDNM LABEL=LIST-USERID                                              VUSR0480
+F011457 DFHMDF POS=(12,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0481
+               COLOR=YELLOW                                             VUSR0482
+        DFHMDF POS=(12,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0483
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0484
+F011468 DFHMDF POS=(12,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0485
+               COLOR=GREEN                                              VUSR0486
+        DFHMDF POS=(12,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0487
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0488
+F011475 DFHMDF POS=(12,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0489
+               COLOR=GREEN                                              VUSR0490
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0491
+F011508 DFHMDF POS=(12,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0492
+               COLOR=BLUE                                               VUSR0493
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0494
+F011513 DFHMDF POS=(12,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0495
+               COLOR=BLUE                                               VUSR0496
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0497
+F011516 DFHMDF POS=(12,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0498
+               COLOR=BLUE                                               VUSR0499
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0500
+F011525 DFHMDF POS=(12,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0501
+               COLOR=BLUE                                               VUSR0502
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0503
+F011536 DFHMDF POS=(12,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0504
+               COLOR=BLUE                                               VUSR0505
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0506
+F011543 DFHMDF POS=(12,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0507
+               COLOR=BLUE                                               VUSR0508
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0509
+F011546 DFHMDF POS=(12,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0510
+               COLOR=BLUE                                               VUSR0511
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0512
+F011550 DFHMDF POS=(12,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0513
+               COLOR=BLUE                                               VUSR0514
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0515
+F011561 DFHMDF POS=(12,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0516
+               COLOR=BLUE                                               VUSR0517
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0518
+F011567 DFHMDF POS=(12,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0519
+               COLOR=BLUE                                               VUSR0520
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0521
+F011574 DFHMDF POS=(12,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0522
+               COLOR=BLUE                                               VUSR0523
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0524
+F011577 DFHMDF POS=(12,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0525
+               COLOR=BLUE                                               VUSR0526
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0527
+F011581 DFHMDF POS=(12,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0528
+               COLOR=BLUE                                               VUSR0529
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0530
+F011585 DFHMDF POS=(13,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0531
+               COLOR=YELLOW,                                           XVUSR0532
+               HILIGHT=UNDERLINE                                        VUSR0533
+        DFHMDF POS=(13,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0534
+* CBLDNM LABEL=LIST-USERID                                              VUSR0535
+F011589 DFHMDF POS=(13,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0536
+               COLOR=YELLOW                                             VUSR0537
+        DFHMDF POS=(13,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0538
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0539
+F011600 DFHMDF POS=(13,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0540
+               COLOR=GREEN                                              VUSR0541
+        DFHMDF POS=(13,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0542
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0543
+F011607 DFHMDF POS=(13,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0544
+               COLOR=GREEN                                              VUSR0545
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0546
+F011640 DFHMDF POS=(13,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0547
+               COLOR=BLUE                                               VUSR0548
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0549
+F011645 DFHMDF POS=(13,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0550
+               COLOR=BLUE                                               VUSR0551
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0552
+F011648 DFHMDF POS=(13,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0553
+               COLOR=BLUE                                               VUSR0554
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0555
+F011657 DFHMDF POS=(13,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0556
+               COLOR=BLUE                                               VUSR0557
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0558
+F011668 DFHMDF POS=(13,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0559
+               COLOR=BLUE                                               VUSR0560
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0561
+F011675 DFHMDF POS=(13,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0562
+               COLOR=BLUE                                               VUSR0563
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0564
+F011678 DFHMDF POS=(13,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0565
+               COLOR=BLUE                                               VUSR0566
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0567
+F011682 DFHMDF POS=(13,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0568
+               COLOR=BLUE                                               VUSR0569
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0570
+F011693 DFHMDF POS=(13,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0571
+               COLOR=BLUE                                               VUSR0572
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0573
+F011699 DFHMDF POS=(13,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0574
+               COLOR=BLUE                                               VUSR0575
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0576
+F011706 DFHMDF POS=(13,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0577
+               COLOR=BLUE                                               VUSR0578
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0579
+F011709 DFHMDF POS=(13,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0580
+               COLOR=BLUE                                               VUSR0581
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0582
+F011713 DFHMDF POS=(13,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0583
+               COLOR=BLUE                                               VUSR0584
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0585
+F011717 DFHMDF POS=(14,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0586
+               COLOR=YELLOW,                                           XVUSR0587
+               HILIGHT=UNDERLINE                                        VUSR0588
+        DFHMDF POS=(14,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0589
+* CBLDNM LABEL=LIST-USERID                                              VUSR0590
+F011721 DFHMDF POS=(14,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0591
+               COLOR=YELLOW                                             VUSR0592
+        DFHMDF POS=(14,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0593
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0594
+F011732 DFHMDF POS=(14,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0595
+               COLOR=GREEN                                              VUSR0596
+        DFHMDF POS=(14,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0597
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0598
+F011739 DFHMDF POS=(14,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0599
+               COLOR=GREEN                                              VUSR0600
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0601
+F011772 DFHMDF POS=(14,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0602
+               COLOR=BLUE                                               VUSR0603
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0604
+F011777 DFHMDF POS=(14,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0605
+               COLOR=BLUE                                               VUSR0606
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0607
+F011780 DFHMDF POS=(14,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0608
+               COLOR=BLUE                                               VUSR0609
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0610
+F011789 DFHMDF POS=(14,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0611
+               COLOR=BLUE                                               VUSR0612
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0613
+F011800 DFHMDF POS=(14,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0614
+               COLOR=BLUE                                               VUSR0615
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0616
+F011807 DFHMDF POS=(14,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0617
+               COLOR=BLUE                                               VUSR0618
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0619
+F011810 DFHMDF POS=(14,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0620
+               COLOR=BLUE                                               VUSR0621
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0622
+F011814 DFHMDF POS=(14,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0623
+               COLOR=BLUE                                               VUSR0624
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0625
+F011825 DFHMDF POS=(14,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0626
+               COLOR=BLUE                                               VUSR0627
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0628
+F011831 DFHMDF POS=(14,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0629
+               COLOR=BLUE                                               VUSR0630
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0631
+F011838 DFHMDF POS=(14,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0632
+               COLOR=BLUE                                               VUSR0633
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0634
+F011841 DFHMDF POS=(14,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0635
+               COLOR=BLUE                                               VUSR0636
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0637
+F011845 DFHMDF POS=(14,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0638
+               COLOR=BLUE                                               VUSR0639
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0640
+F011849 DFHMDF POS=(15,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0641
+               COLOR=YELLOW,                                           XVUSR0642
+               HILIGHT=UNDERLINE                                        VUSR0643
+        DFHMDF POS=(15,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0644
+* CBLDNM LABEL=LIST-USERID                                              VUSR0645
+F011853 DFHMDF POS=(15,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0646
+               COLOR=YELLOW                                             VUSR0647
+        DFHMDF POS=(15,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0648
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0649
+F011864 DFHMDF POS=(15,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0650
+               COLOR=GREEN                                              VUSR0651
+        DFHMDF POS=(15,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0652
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0653
+F011871 DFHMDF POS=(15,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0654
+               COLOR=GREEN                                              VUSR0655
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0656
+F011904 DFHMDF POS=(15,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0657
+               COLOR=BLUE                                               VUSR0658
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0659
+F011909 DFHMDF POS=(15,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0660
+               COLOR=BLUE                                               VUSR0661
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0662
+F011912 DFHMDF POS=(15,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0663
+               COLOR=BLUE                                               VUSR0664
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0665
+F011921 DFHMDF POS=(15,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0666
+               COLOR=BLUE                                               VUSR0667
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0668
+F011932 DFHMDF POS=(15,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0669
+               COLOR=BLUE                                               VUSR0670
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0671
+F011939 DFHMDF POS=(15,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0672
+               COLOR=BLUE                                               VUSR0673
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0674
+F011942 DFHMDF POS=(15,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0675
+               COLOR=BLUE                                               VUSR0676
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0677
+F011946 DFHMDF POS=(15,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0678
+               COLOR=BLUE                                               VUSR0679
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0680
+F011957 DFHMDF POS=(15,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0681
+               COLOR=BLUE                                               VUSR0682
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0683
+F011963 DFHMDF POS=(15,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0684
+               COLOR=BLUE                                               VUSR0685
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0686
+F011970 DFHMDF POS=(15,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0687
+               COLOR=BLUE                                               VUSR0688
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0689
+F011973 DFHMDF POS=(15,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0690
+               COLOR=BLUE                                               VUSR0691
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0692
+F011977 DFHMDF POS=(15,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0693
+               COLOR=BLUE                                               VUSR0694
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0695
+F011981 DFHMDF POS=(16,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0696
+               COLOR=YELLOW,                                           XVUSR0697
+               HILIGHT=UNDERLINE                                        VUSR0698
+        DFHMDF POS=(16,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0699
+* CBLDNM LABEL=LIST-USERID                                              VUSR0700
+F011985 DFHMDF POS=(16,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0701
+               COLOR=YELLOW                                             VUSR0702
+        DFHMDF POS=(16,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0703
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0704
+F011996 DFHMDF POS=(16,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0705
+               COLOR=GREEN                                              VUSR0706
+        DFHMDF POS=(16,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0707
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0708
+F012003 DFHMDF POS=(16,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0709
+               COLOR=GREEN                                              VUSR0710
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0711
+F012036 DFHMDF POS=(16,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0712
+               COLOR=BLUE                                               VUSR0713
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0714
+F012041 DFHMDF POS=(16,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0715
+               COLOR=BLUE                                               VUSR0716
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0717
+F012044 DFHMDF POS=(16,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0718
+               COLOR=BLUE                                               VUSR0719
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0720
+F012053 DFHMDF POS=(16,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0721
+               COLOR=BLUE                                               VUSR0722
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0723
+F012064 DFHMDF POS=(16,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0724
+               COLOR=BLUE                                               VUSR0725
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0726
+F012071 DFHMDF POS=(16,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0727
+               COLOR=BLUE                                               VUSR0728
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0729
+F012074 DFHMDF POS=(16,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0730
+               COLOR=BLUE                                               VUSR0731
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0732
+F012078 DFHMDF POS=(16,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0733
+               COLOR=BLUE                                               VUSR0734
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0735
+F012089 DFHMDF POS=(16,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0736
+               COLOR=BLUE                                               VUSR0737
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0738
+F012095 DFHMDF POS=(16,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0739
+               COLOR=BLUE                                               VUSR0740
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0741
+F012102 DFHMDF POS=(16,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0742
+               COLOR=BLUE                                               VUSR0743
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0744
+F012105 DFHMDF POS=(16,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0745
+               COLOR=BLUE                                               VUSR0746
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0747
+F012109 DFHMDF POS=(16,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0748
+               COLOR=BLUE                                               VUSR0749
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0750
+F012113 DFHMDF POS=(17,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0751
+               COLOR=YELLOW,                                           XVUSR0752
+               HILIGHT=UNDERLINE                                        VUSR0753
+        DFHMDF POS=(17,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0754
+* CBLDNM LABEL=LIST-USERID                                              VUSR0755
+F012117 DFHMDF POS=(17,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0756
+               COLOR=YELLOW                                             VUSR0757
+        DFHMDF POS=(17,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0758
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0759
+F012128 DFHMDF POS=(17,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0760
+               COLOR=GREEN                                              VUSR0761
+        DFHMDF POS=(17,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0762
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0763
+F012135 DFHMDF POS=(17,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0764
+               COLOR=GREEN                                              VUSR0765
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0766
+F012168 DFHMDF POS=(17,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0767
+               COLOR=BLUE                                               VUSR0768
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0769
+F012173 DFHMDF POS=(17,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0770
+               COLOR=BLUE                                               VUSR0771
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0772
+F012176 DFHMDF POS=(17,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0773
+               COLOR=BLUE                                               VUSR0774
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0775
+F012185 DFHMDF POS=(17,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0776
+               COLOR=BLUE                                               VUSR0777
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0778
+F012196 DFHMDF POS=(17,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0779
+               COLOR=BLUE                                               VUSR0780
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0781
+F012203 DFHMDF POS=(17,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0782
+               COLOR=BLUE                                               VUSR0783
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0784
+F012206 DFHMDF POS=(17,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0785
+               COLOR=BLUE                                               VUSR0786
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0787
+F012210 DFHMDF POS=(17,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0788
+               COLOR=BLUE                                               VUSR0789
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0790
+F012221 DFHMDF POS=(17,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0791
+               COLOR=BLUE                                               VUSR0792
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0793
+F012227 DFHMDF POS=(17,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0794
+               COLOR=BLUE                                               VUSR0795
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0796
+F012234 DFHMDF POS=(17,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0797
+               COLOR=BLUE                                               VUSR0798
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0799
+F012237 DFHMDF POS=(17,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0800
+               COLOR=BLUE                                               VUSR0801
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0802
+F012241 DFHMDF POS=(17,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0803
+               COLOR=BLUE                                               VUSR0804
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0805
+F012245 DFHMDF POS=(18,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0806
+               COLOR=YELLOW,                                           XVUSR0807
+               HILIGHT=UNDERLINE                                        VUSR0808
+        DFHMDF POS=(18,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0809
+* CBLDNM LABEL=LIST-USERID                                              VUSR0810
+F012249 DFHMDF POS=(18,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0811
+               COLOR=YELLOW                                             VUSR0812
+        DFHMDF POS=(18,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0813
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0814
+F012260 DFHMDF POS=(18,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0815
+               COLOR=GREEN                                              VUSR0816
+        DFHMDF POS=(18,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0817
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0818
+F012267 DFHMDF POS=(18,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0819
+               COLOR=GREEN                                              VUSR0820
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0821
+F012300 DFHMDF POS=(18,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0822
+               COLOR=BLUE                                               VUSR0823
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0824
+F012305 DFHMDF POS=(18,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0825
+               COLOR=BLUE                                               VUSR0826
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0827
+F012308 DFHMDF POS=(18,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0828
+               COLOR=BLUE                                               VUSR0829
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0830
+F012317 DFHMDF POS=(18,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0831
+               COLOR=BLUE                                               VUSR0832
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0833
+F012328 DFHMDF POS=(18,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0834
+               COLOR=BLUE                                               VUSR0835
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0836
+F012335 DFHMDF POS=(18,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0837
+               COLOR=BLUE                                               VUSR0838
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0839
+F012338 DFHMDF POS=(18,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0840
+               COLOR=BLUE                                               VUSR0841
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0842
+F012342 DFHMDF POS=(18,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0843
+               COLOR=BLUE                                               VUSR0844
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0845
+F012353 DFHMDF POS=(18,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0846
+               COLOR=BLUE                                               VUSR0847
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0848
+F012359 DFHMDF POS=(18,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0849
+               COLOR=BLUE                                               VUSR0850
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0851
+F012366 DFHMDF POS=(18,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0852
+               COLOR=BLUE                                               VUSR0853
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0854
+F012369 DFHMDF POS=(18,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0855
+               COLOR=BLUE                                               VUSR0856
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0857
+F012373 DFHMDF POS=(18,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0858
+               COLOR=BLUE                                               VUSR0859
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0860
+F012377 DFHMDF POS=(19,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0861
+               COLOR=YELLOW,                                           XVUSR0862
+               HILIGHT=UNDERLINE                                        VUSR0863
+        DFHMDF POS=(19,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0864
+* CBLDNM LABEL=LIST-USERID                                              VUSR0865
+F012381 DFHMDF POS=(19,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0866
+               COLOR=YELLOW                                             VUSR0867
+        DFHMDF POS=(19,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0868
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0869
+F012392 DFHMDF POS=(19,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0870
+               COLOR=GREEN                                              VUSR0871
+        DFHMDF POS=(19,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0872
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0873
+F012399 DFHMDF POS=(19,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0874
+               COLOR=GREEN                                              VUSR0875
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0876
+F012432 DFHMDF POS=(19,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0877
+               COLOR=BLUE                                               VUSR0878
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0879
+F012437 DFHMDF POS=(19,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0880
+               COLOR=BLUE                                               VUSR0881
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0882
+F012440 DFHMDF POS=(19,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0883
+               COLOR=BLUE                                               VUSR0884
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0885
+F012449 DFHMDF POS=(19,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0886
+               COLOR=BLUE                                               VUSR0887
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0888
+F012460 DFHMDF POS=(19,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0889
+               COLOR=BLUE                                               VUSR0890
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0891
+F012467 DFHMDF POS=(19,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0892
+               COLOR=BLUE                                               VUSR0893
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0894
+F012470 DFHMDF POS=(19,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0895
+               COLOR=BLUE                                               VUSR0896
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0897
+F012474 DFHMDF POS=(19,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0898
+               COLOR=BLUE                                               VUSR0899
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0900
+F012485 DFHMDF POS=(19,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0901
+               COLOR=BLUE                                               VUSR0902
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0903
+F012491 DFHMDF POS=(19,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0904
+               COLOR=BLUE                                               VUSR0905
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0906
+F012498 DFHMDF POS=(19,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0907
+               COLOR=BLUE                                               VUSR0908
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0909
+F012501 DFHMDF POS=(19,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0910
+               COLOR=BLUE                                               VUSR0911
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0912
+F012505 DFHMDF POS=(19,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0913
+               COLOR=BLUE                                               VUSR0914
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0915
+F012509 DFHMDF POS=(20,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0916
+               COLOR=YELLOW,                                           XVUSR0917
+               HILIGHT=UNDERLINE                                        VUSR0918
+        DFHMDF POS=(20,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0919
+* CBLDNM LABEL=LIST-USERID                                              VUSR0920
+F012513 DFHMDF POS=(20,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0921
+               COLOR=YELLOW                                             VUSR0922
+        DFHMDF POS=(20,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0923
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0924
+F012524 DFHMDF POS=(20,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0925
+               COLOR=GREEN                                              VUSR0926
+        DFHMDF POS=(20,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0927
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0928
+F012531 DFHMDF POS=(20,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0929
+               COLOR=GREEN                                              VUSR0930
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0931
+F012564 DFHMDF POS=(20,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0932
+               COLOR=BLUE                                               VUSR0933
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0934
+F012569 DFHMDF POS=(20,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0935
+               COLOR=BLUE                                               VUSR0936
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0937
+F012572 DFHMDF POS=(20,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0938
+               COLOR=BLUE                                               VUSR0939
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0940
+F012581 DFHMDF POS=(20,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0941
+               COLOR=BLUE                                               VUSR0942
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0943
+F012592 DFHMDF POS=(20,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0944
+               COLOR=BLUE                                               VUSR0945
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR0946
+F012599 DFHMDF POS=(20,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0947
+               COLOR=BLUE                                               VUSR0948
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR0949
+F012602 DFHMDF POS=(20,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0950
+               COLOR=BLUE                                               VUSR0951
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR0952
+F012606 DFHMDF POS=(20,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR0953
+               COLOR=BLUE                                               VUSR0954
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR0955
+F012617 DFHMDF POS=(20,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0956
+               COLOR=BLUE                                               VUSR0957
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR0958
+F012623 DFHMDF POS=(20,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0959
+               COLOR=BLUE                                               VUSR0960
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR0961
+F012630 DFHMDF POS=(20,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0962
+               COLOR=BLUE                                               VUSR0963
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR0964
+F012633 DFHMDF POS=(20,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0965
+               COLOR=BLUE                                               VUSR0966
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR0967
+F012637 DFHMDF POS=(20,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR0968
+               COLOR=BLUE                                               VUSR0969
+* CBLDNM LABEL=LIST-SELECT                                              VUSR0970
+F012641 DFHMDF POS=(21,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR0971
+               COLOR=YELLOW,                                           XVUSR0972
+               HILIGHT=UNDERLINE                                        VUSR0973
+        DFHMDF POS=(21,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0974
+* CBLDNM LABEL=LIST-USERID                                              VUSR0975
+F012645 DFHMDF POS=(21,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR0976
+               COLOR=YELLOW                                             VUSR0977
+        DFHMDF POS=(21,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0978
+* CBLDNM LABEL=LIST-OPERID                                              VUSR0979
+F012656 DFHMDF POS=(21,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR0980
+               COLOR=GREEN                                              VUSR0981
+        DFHMDF POS=(21,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR0982
+* CBLDNM LABEL=LIST-USERNM                                              VUSR0983
+F012663 DFHMDF POS=(21,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR0984
+               COLOR=GREEN                                              VUSR0985
+* CBLDNM LABEL=LIST-CLASS                                               VUSR0986
+F012696 DFHMDF POS=(21,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR0987
+               COLOR=BLUE                                               VUSR0988
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR0989
+F012701 DFHMDF POS=(21,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR0990
+               COLOR=BLUE                                               VUSR0991
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR0992
+F012704 DFHMDF POS=(21,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0993
+               COLOR=BLUE                                               VUSR0994
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR0995
+F012713 DFHMDF POS=(21,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR0996
+               COLOR=BLUE                                               VUSR0997
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR0998
+F012724 DFHMDF POS=(21,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR0999
+               COLOR=BLUE                                               VUSR1000
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR1001
+F012731 DFHMDF POS=(21,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1002
+               COLOR=BLUE                                               VUSR1003
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR1004
+F012734 DFHMDF POS=(21,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1005
+               COLOR=BLUE                                               VUSR1006
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR1007
+F012738 DFHMDF POS=(21,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR1008
+               COLOR=BLUE                                               VUSR1009
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR1010
+F012749 DFHMDF POS=(21,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1011
+               COLOR=BLUE                                               VUSR1012
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR1013
+F012755 DFHMDF POS=(21,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1014
+               COLOR=BLUE                                               VUSR1015
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR1016
+F012762 DFHMDF POS=(21,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1017
+               COLOR=BLUE                                               VUSR1018
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR1019
+F012765 DFHMDF POS=(21,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1020
+               COLOR=BLUE                                               VUSR1021
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR1022
+F012769 DFHMDF POS=(21,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1023
+               COLOR=BLUE                                               VUSR1024
+* CBLDNM LABEL=LIST-SELECT                                              VUSR1025
+F012773 DFHMDF POS=(22,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR1026
+               COLOR=YELLOW,                                           XVUSR1027
+               HILIGHT=UNDERLINE                                        VUSR1028
+        DFHMDF POS=(22,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1029
+* CBLDNM LABEL=LIST-USERID                                              VUSR1030
+F012777 DFHMDF POS=(22,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR1031
+               COLOR=YELLOW                                             VUSR1032
+        DFHMDF POS=(22,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1033
+* CBLDNM LABEL=LIST-OPERID                                              VUSR1034
+F012788 DFHMDF POS=(22,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR1035
+               COLOR=GREEN                                              VUSR1036
+        DFHMDF POS=(22,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1037
+* CBLDNM LABEL=LIST-USERNM                                              VUSR1038
+F012795 DFHMDF POS=(22,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR1039
+               COLOR=GREEN                                              VUSR1040
+* CBLDNM LABEL=LIST-CLASS                                               VUSR1041
+F012828 DFHMDF POS=(22,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1042
+               COLOR=BLUE                                               VUSR1043
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR1044
+F012833 DFHMDF POS=(22,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1045
+               COLOR=BLUE                                               VUSR1046
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR1047
+F012836 DFHMDF POS=(22,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1048
+               COLOR=BLUE                                               VUSR1049
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR1050
+F012845 DFHMDF POS=(22,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1051
+               COLOR=BLUE                                               VUSR1052
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR1053
+F012856 DFHMDF POS=(22,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1054
+               COLOR=BLUE                                               VUSR1055
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR1056
+F012863 DFHMDF POS=(22,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1057
+               COLOR=BLUE                                               VUSR1058
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR1059
+F012866 DFHMDF POS=(22,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1060
+               COLOR=BLUE                                               VUSR1061
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR1062
+F012870 DFHMDF POS=(22,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR1063
+               COLOR=BLUE                                               VUSR1064
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR1065
+F012881 DFHMDF POS=(22,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1066
+               COLOR=BLUE                                               VUSR1067
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR1068
+F012887 DFHMDF POS=(22,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1069
+               COLOR=BLUE                                               VUSR1070
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR1071
+F012894 DFHMDF POS=(22,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1072
+               COLOR=BLUE                                               VUSR1073
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR1074
+F012897 DFHMDF POS=(22,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1075
+               COLOR=BLUE                                               VUSR1076
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR1077
+F012901 DFHMDF POS=(22,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1078
+               COLOR=BLUE                                               VUSR1079
+* CBLDNM LABEL=LIST-SELECT                                              VUSR1080
+F012905 DFHMDF POS=(23,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR1081
+               COLOR=YELLOW,                                           XVUSR1082
+               HILIGHT=UNDERLINE                                        VUSR1083
+        DFHMDF POS=(23,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1084
+* CBLDNM LABEL=LIST-USERID                                              VUSR1085
+F012909 DFHMDF POS=(23,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR1086
+               COLOR=YELLOW                                             VUSR1087
+        DFHMDF POS=(23,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1088
+* CBLDNM LABEL=LIST-OPERID                                              VUSR1089
+F012920 DFHMDF POS=(23,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR1090
+               COLOR=GREEN                                              VUSR1091
+        DFHMDF POS=(23,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1092
+* CBLDNM LABEL=LIST-USERNM                                              VUSR1093
+F012927 DFHMDF POS=(23,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR1094
+               COLOR=GREEN                                              VUSR1095
+* CBLDNM LABEL=LIST-CLASS                                               VUSR1096
+F012960 DFHMDF POS=(23,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1097
+               COLOR=BLUE                                               VUSR1098
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR1099
+F012965 DFHMDF POS=(23,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1100
+               COLOR=BLUE                                               VUSR1101
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR1102
+F012968 DFHMDF POS=(23,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1103
+               COLOR=BLUE                                               VUSR1104
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR1105
+F012977 DFHMDF POS=(23,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1106
+               COLOR=BLUE                                               VUSR1107
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR1108
+F012988 DFHMDF POS=(23,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1109
+               COLOR=BLUE                                               VUSR1110
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR1111
+F012995 DFHMDF POS=(23,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1112
+               COLOR=BLUE                                               VUSR1113
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR1114
+F012998 DFHMDF POS=(23,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1115
+               COLOR=BLUE                                               VUSR1116
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR1117
+F013002 DFHMDF POS=(23,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR1118
+               COLOR=BLUE                                               VUSR1119
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR1120
+F013013 DFHMDF POS=(23,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1121
+               COLOR=BLUE                                               VUSR1122
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR1123
+F013019 DFHMDF POS=(23,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1124
+               COLOR=BLUE                                               VUSR1125
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR1126
+F013026 DFHMDF POS=(23,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1127
+               COLOR=BLUE                                               VUSR1128
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR1129
+F013029 DFHMDF POS=(23,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1130
+               COLOR=BLUE                                               VUSR1131
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR1132
+F013033 DFHMDF POS=(23,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1133
+               COLOR=BLUE                                               VUSR1134
+* CBLDNM LABEL=LIST-SELECT                                              VUSR1135
+F013037 DFHMDF POS=(24,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR1136
+               COLOR=YELLOW,                                           XVUSR1137
+               HILIGHT=UNDERLINE                                        VUSR1138
+        DFHMDF POS=(24,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1139
+* CBLDNM LABEL=LIST-USERID                                              VUSR1140
+F013041 DFHMDF POS=(24,005),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR1141
+               COLOR=YELLOW                                             VUSR1142
+        DFHMDF POS=(24,014),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1143
+* CBLDNM LABEL=LIST-OPERID                                              VUSR1144
+F013052 DFHMDF POS=(24,016),LENGTH=004,ATTRB=(ASKIP,NORM,FSET),        XVUSR1145
+               COLOR=GREEN                                              VUSR1146
+        DFHMDF POS=(24,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1147
+* CBLDNM LABEL=LIST-USERNM                                              VUSR1148
+F013059 DFHMDF POS=(24,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR1149
+               COLOR=GREEN                                              VUSR1150
+* CBLDNM LABEL=LIST-CLASS                                               VUSR1151
+F013092 DFHMDF POS=(24,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1152
+               COLOR=BLUE                                               VUSR1153
+* CBLDNM LABEL=LIST-DAPSCO                                              VUSR1154
+F013097 DFHMDF POS=(24,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1155
+               COLOR=BLUE                                               VUSR1156
+* CBLDNM LABEL=LIST-IND-LIST                                            VUSR1157
+F013100 DFHMDF POS=(24,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1158
+               COLOR=BLUE                                               VUSR1159
+* CBLDNM LABEL=LIST-IND-AUTH                                            VUSR1160
+F013109 DFHMDF POS=(24,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1161
+               COLOR=BLUE                                               VUSR1162
+* CBLDNM LABEL=LIST-PRIMARY-CO                                          VUSR1163
+F013120 DFHMDF POS=(24,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1164
+               COLOR=BLUE                                               VUSR1165
+* CBLDNM LABEL=LIST-PRIMARY-IND                                         VUSR1166
+F013127 DFHMDF POS=(24,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1167
+               COLOR=BLUE                                               VUSR1168
+* CBLDNM LABEL=LIST-WIN-FUNCTION                                        VUSR1169
+F013130 DFHMDF POS=(24,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1170
+               COLOR=BLUE                                               VUSR1171
+* CBLDNM LABEL=LIST-WIN-UNIT                                            VUSR1172
+F013134 DFHMDF POS=(24,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR1173
+               COLOR=BLUE                                               VUSR1174
+* CBLDNM LABEL=LIST-WIN-ORG                                             VUSR1175
+F013145 DFHMDF POS=(24,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1176
+               COLOR=BLUE                                               VUSR1177
+* CBLDNM LABEL=LIST-WIN-POSITION                                        VUSR1178
+F013151 DFHMDF POS=(24,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1179
+               COLOR=BLUE                                               VUSR1180
+* CBLDNM LABEL=LIST-WIN-DIRECTOR                                        VUSR1181
+F013158 DFHMDF POS=(24,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1182
+               COLOR=BLUE                                               VUSR1183
+* CBLDNM LABEL=LIST-SVC-REGION                                          VUSR1184
+F013161 DFHMDF POS=(24,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1185
+               COLOR=BLUE                                               VUSR1186
+* CBLDNM LABEL=LIST-RPT-REMOTE                                          VUSR1187
+F013165 DFHMDF POS=(24,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1188
+               COLOR=BLUE                                               VUSR1189
+LIST-MESSAGE DFHMDF                                                    XVUSR1190
+               POS=(25,001),LENGTH=078,ATTRB=(ASKIP,BRT),              XVUSR1191
+               COLOR=RED                                                VUSR1192
+        DFHMDF POS=(25,080),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1193
+        DFHMDF POS=(26,001),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1194
+               INITIAL='Opts:',                                        XVUSR1195
+               COLOR=TURQUOISE                                          VUSR1196
+        DFHMDF POS=(26,007),LENGTH=001,ATTRB=(ASKIP,BRT),              XVUSR1197
+               INITIAL='U'                                              VUSR1198
+        DFHMDF POS=(26,009),LENGTH=009,ATTRB=(ASKIP,NORM),             XVUSR1199
+               INITIAL='= Update,',                                    XVUSR1200
+               COLOR=PINK                                               VUSR1201
+        DFHMDF POS=(26,019),LENGTH=001,ATTRB=(ASKIP,BRT),              XVUSR1202
+               INITIAL='A'                                              VUSR1203
+        DFHMDF POS=(26,021),LENGTH=006,ATTRB=(ASKIP,NORM),             XVUSR1204
+               INITIAL='= Add,',                                       XVUSR1205
+               COLOR=PINK                                               VUSR1206
+        DFHMDF POS=(26,028),LENGTH=001,ATTRB=(ASKIP,BRT),              XVUSR1207
+               INITIAL='D'                                              VUSR1208
+        DFHMDF POS=(26,030),LENGTH=009,ATTRB=(ASKIP,NORM),             XVUSR1209
+               INITIAL='= Delete,',                                    XVUSR1210
+               COLOR=PINK                                               VUSR1211
+        DFHMDF POS=(26,040),LENGTH=001,ATTRB=(ASKIP,BRT),              XVUSR1212
+               INITIAL='Q'                                              VUSR1213
+        DFHMDF POS=(26,042),LENGTH=025,ATTRB=(ASKIP,NORM),             XVUSR1214
+               INITIAL='= Query Active Directory,',                    XVUSR1215
+               COLOR=PINK                                               VUSR1216
+        DFHMDF POS=(26,068),LENGTH=001,ATTRB=(ASKIP,BRT),              XVUSR1217
+               INITIAL='T'                                              VUSR1218
+LIST-TEST-TEXT DFHMDF                                                  XVUSR1219
+               POS=(26,070),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1220
+               INITIAL='= Test security,',                             XVUSR1221
+               COLOR=PINK                                               VUSR1222
+LIST-XFER-OPTION DFHMDF                                                XVUSR1223
+               POS=(26,087),LENGTH=001,ATTRB=(ASKIP,BRT),              XVUSR1224
+               INITIAL='X'                                              VUSR1225
+LIST-XFER-TEXT DFHMDF                                                  XVUSR1226
+               POS=(26,089),LENGTH=038,ATTRB=(ASKIP,NORM),             XVUSR1227
+               INITIAL='= Transfer user id to previous screen.',       XVUSR1228
+               COLOR=PINK                                               VUSR1229
+        DFHMDF POS=(27,001),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1230
+               INITIAL='Keys:',                                        XVUSR1231
+               COLOR=TURQUOISE                                          VUSR1232
+        DFHMDF POS=(27,007),LENGTH=002,ATTRB=(ASKIP,BRT),              XVUSR1233
+               INITIAL='F1'                                             VUSR1234
+        DFHMDF POS=(27,010),LENGTH=007,ATTRB=(ASKIP,NORM),             XVUSR1235
+               INITIAL='= Help,',                                      XVUSR1236
+               COLOR=PINK                                               VUSR1237
+        DFHMDF POS=(27,018),LENGTH=002,ATTRB=(ASKIP,BRT),              XVUSR1238
+               INITIAL='F3'                                             VUSR1239
+        DFHMDF POS=(27,021),LENGTH=007,ATTRB=(ASKIP,NORM),             XVUSR1240
+               INITIAL='= Exit,',                                      XVUSR1241
+               COLOR=PINK                                               VUSR1242
+        DFHMDF POS=(27,042),LENGTH=005,ATTRB=(ASKIP,BRT),              XVUSR1243
+               INITIAL='F6/F7'                                          VUSR1244
+        DFHMDF POS=(27,048),LENGTH=011,ATTRB=(ASKIP,NORM),             XVUSR1245
+               INITIAL='= Top/Prev,',                                  XVUSR1246
+               COLOR=PINK                                               VUSR1247
+        DFHMDF POS=(27,060),LENGTH=005,ATTRB=(ASKIP,BRT),              XVUSR1248
+               INITIAL='F8/F9'                                          VUSR1249
+        DFHMDF POS=(27,066),LENGTH=011,ATTRB=(ASKIP,NORM),             XVUSR1250
+               INITIAL='= Next/Bot.',                                  XVUSR1251
+               COLOR=PINK                                               VUSR1252
+*                                                                       VUSR1253
+        PRINT  ON,GEN                                                   VUSR1254
+        TITLE  'D E T L M A P   ( 0 1 . 5 5 )   -   D E F A U L T   L IXVUSR1255
+                S T   M A P   F O R   1 3 2   C O L U M N S '           VUSR1256
+DETLMAP DFHMDI SIZE=(27,132)                                            VUSR1257
+        PRINT  ON,NOGEN                                                 VUSR1258
+        DFHMDF POS=(01,001),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1259
+               INITIAL='VUSR    ',                                     XVUSR1260
+               COLOR=BLUE                                               VUSR1261
+DETL-COMPANY DFHMDF                                                    XVUSR1262
+               POS=(01,046),LENGTH=040,ATTRB=(ASKIP,BRT),              XVUSR1263
+               COLOR=TURQUOISE                                          VUSR1264
+DETL-SYSDATE DFHMDF                                                    XVUSR1265
+               POS=(01,121),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR1266
+               INITIAL='mm/dd/yyyy',                                   XVUSR1267
+               COLOR=BLUE                                               VUSR1268
+DETL-NETNAME DFHMDF                                                    XVUSR1269
+               POS=(02,001),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR1270
+               COLOR=BLUE                                               VUSR1271
+DETL-TITLE DFHMDF                                                      XVUSR1272
+               POS=(02,046),LENGTH=040,ATTRB=(ASKIP,BRT),              XVUSR1273
+               INITIAL='       Update VUSERID File Record       '       VUSR1274
+DETL-SYSTIME DFHMDF                                                    XVUSR1275
+               POS=(02,121),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR1276
+               INITIAL='hh:mm xx',                                     XVUSR1277
+               COLOR=BLUE                                               VUSR1278
+        DFHMDF POS=(03,001),LENGTH=001,ATTRB=(PROT,BRT),INITIAL=' '     VUSR1279
+        DFHMDF POS=(04,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1280
+               INITIAL='User ident. . .:',                             XVUSR1281
+               COLOR=TURQUOISE                                          VUSR1282
+DETL-USERID DFHMDF                                                     XVUSR1283
+               POS=(04,018),LENGTH=008,ATTRB=(UNPROT,BRT,FSET),        XVUSR1284
+               COLOR=YELLOW                                             VUSR1285
+        DFHMDF POS=(04,027),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1286
+        DFHMDF POS=(05,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1287
+               INITIAL='User name . . .:',                             XVUSR1288
+               COLOR=TURQUOISE                                          VUSR1289
+DETL-USERNM DFHMDF                                                     XVUSR1290
+               POS=(05,018),LENGTH=020,ATTRB=(UNPROT,NORM),            XVUSR1291
+               COLOR=GREEN,                                            XVUSR1292
+               HILIGHT=UNDERLINE                                        VUSR1293
+        DFHMDF POS=(05,039),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1294
+        DFHMDF POS=(06,001),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1295
+        DFHMDF POS=(07,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1296
+               INITIAL='Operator ident.:',                             XVUSR1297
+               COLOR=TURQUOISE                                          VUSR1298
+DETL-OPERID DFHMDF                                                     XVUSR1299
+               POS=(07,018),LENGTH=004,ATTRB=(UNPROT,NORM),            XVUSR1300
+               COLOR=GREEN,                                            XVUSR1301
+               HILIGHT=UNDERLINE                                        VUSR1302
+        DFHMDF POS=(07,023),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1303
+        DFHMDF POS=(08,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1304
+               INITIAL='Classification :',                             XVUSR1305
+               COLOR=TURQUOISE                                          VUSR1306
+DETL-CLASS DFHMDF                                                      XVUSR1307
+               POS=(08,018),LENGTH=002,ATTRB=(UNPROT,NORM),            XVUSR1308
+               COLOR=GREEN,                                            XVUSR1309
+               HILIGHT=UNDERLINE                                        VUSR1310
+        DFHMDF POS=(08,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1311
+        DFHMDF POS=(08,036),LENGTH=094,ATTRB=(ASKIP,NORM),             XVUSR1312
+               INITIAL='Classification level from ''00'' (data entry opXVUSR1313
+               erators) to ''99'' (supervisors or someone whom has',   XVUSR1314
+               COLOR=BLUE                                               VUSR1315
+        DFHMDF POS=(09,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1316
+               INITIAL='DAPSCO code . .:',                             XVUSR1317
+               COLOR=TURQUOISE                                          VUSR1318
+DETL-DAPSCO DFHMDF                                                     XVUSR1319
+               POS=(09,018),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR1320
+               COLOR=GREEN,                                            XVUSR1321
+               HILIGHT=UNDERLINE                                        VUSR1322
+        DFHMDF POS=(09,020),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1323
+        DFHMDF POS=(09,036),LENGTH=050,ATTRB=(ASKIP,NORM),             XVUSR1324
+               INITIAL='Regional DAPSCO code: 0 = Northeast,  6 = OmahaXVUSR1325
+               ,',                                                     XVUSR1326
+               COLOR=BLUE                                               VUSR1327
+        DFHMDF POS=(09,099),LENGTH=032,ATTRB=(ASKIP,NORM),             XVUSR1328
+               INITIAL='access to all system functions).',             XVUSR1329
+               COLOR=BLUE                                               VUSR1330
+        DFHMDF POS=(10,058),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR1331
+               INITIAL='1 = Dayton,     7 = Atlanta,',                 XVUSR1332
+               COLOR=BLUE                                               VUSR1333
+        DFHMDF POS=(11,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1334
+               INITIAL='Industry list .:',                             XVUSR1335
+               COLOR=TURQUOISE                                          VUSR1336
+DETL-IND-LIST DFHMDF                                                   XVUSR1337
+               POS=(11,018),LENGTH=008,ATTRB=(UNPROT,NORM),            XVUSR1338
+               COLOR=GREEN,                                            XVUSR1339
+               HILIGHT=UNDERLINE                                        VUSR1340
+        DFHMDF POS=(11,027),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1341
+        DFHMDF POS=(11,058),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR1342
+               INITIAL='2 = Midwest,    8 = Noland 8,',                XVUSR1343
+               COLOR=BLUE                                               VUSR1344
+        DFHMDF POS=(12,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1345
+               INITIAL='  authorization:',                             XVUSR1346
+               COLOR=TURQUOISE                                          VUSR1347
+DETL-IND-AUTH DFHMDF                                                   XVUSR1348
+               POS=(12,018),LENGTH=008,ATTRB=(UNPROT,NORM),            XVUSR1349
+               COLOR=GREEN,                                            XVUSR1350
+               HILIGHT=UNDERLINE                                        VUSR1351
+        DFHMDF POS=(12,027),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1352
+        DFHMDF POS=(12,058),LENGTH=033,ATTRB=(ASKIP,NORM),             XVUSR1353
+               INITIAL='3 = Southwest,  9 = Winwholesale,',            XVUSR1354
+               COLOR=BLUE                                               VUSR1355
+        DFHMDF POS=(13,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1356
+               INITIAL='Default select.:',                             XVUSR1357
+               COLOR=TURQUOISE                                          VUSR1358
+DETL-DFQ-SELECT DFHMDF                                                 XVUSR1359
+               POS=(13,018),LENGTH=008,ATTRB=(UNPROT,NORM),            XVUSR1360
+               COLOR=GREEN,                                            XVUSR1361
+               HILIGHT=UNDERLINE                                        VUSR1362
+        DFHMDF POS=(13,027),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1363
+        DFHMDF POS=(13,058),LENGTH=035,ATTRB=(ASKIP,NORM),             XVUSR1364
+               INITIAL='4 = Pheonix,    A = AL (not an AC),',          XVUSR1365
+               COLOR=BLUE                                               VUSR1366
+        DFHMDF POS=(14,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1367
+               INITIAL='       based on:',                             XVUSR1368
+               COLOR=TURQUOISE                                          VUSR1369
+DETL-DFQ-BASEN DFHMDF                                                  XVUSR1370
+               POS=(14,018),LENGTH=002,ATTRB=(UNPROT,NORM,NUM),        XVUSR1371
+               COLOR=GREEN,                                            XVUSR1372
+               HILIGHT=UNDERLINE                                        VUSR1373
+        DFHMDF POS=(14,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1374
+        DFHMDF POS=(14,058),LENGTH=059,ATTRB=(ASKIP,NORM),             XVUSR1375
+               INITIAL='5 = Noland 5,   W = Wise user / AC, or   X = ExXVUSR1376
+               ternal user.',                                          XVUSR1377
+               COLOR=BLUE                                               VUSR1378
+        DFHMDF POS=(15,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1379
+               INITIAL='       rept no.:',                             XVUSR1380
+               COLOR=TURQUOISE                                          VUSR1381
+DETL-DFQ-REPTN DFHMDF                                                  XVUSR1382
+               POS=(15,018),LENGTH=002,ATTRB=(UNPROT,NORM,NUM),        XVUSR1383
+               COLOR=GREEN,                                            XVUSR1384
+               HILIGHT=UNDERLINE                                        VUSR1385
+        DFHMDF POS=(15,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1386
+        DFHMDF POS=(16,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1387
+               INITIAL='       sort seq:',                             XVUSR1388
+               COLOR=TURQUOISE                                          VUSR1389
+DETL-DFQ-SORT DFHMDF                                                   XVUSR1390
+               POS=(16,018),LENGTH=003,ATTRB=(UNPROT,NORM),            XVUSR1391
+               COLOR=GREEN,                                            XVUSR1392
+               HILIGHT=UNDERLINE                                        VUSR1393
+        DFHMDF POS=(16,022),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1394
+        DFHMDF POS=(16,074),LENGTH=042,ATTRB=(ASKIP,NORM),             XVUSR1395
+               INITIAL='Load ACTIVE DIRECTORY ATTRIBUTES at signon',   XVUSR1396
+               COLOR=TURQUOISE,                                        XVUSR1397
+               HILIGHT=UNDERLINE                                        VUSR1398
+        DFHMDF POS=(16,117),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1399
+               INITIAL=':',                                            XVUSR1400
+               COLOR=TURQUOISE                                          VUSR1401
+DETL-AD-REFRESH DFHMDF                                                 XVUSR1402
+               POS=(16,119),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR1403
+               COLOR=GREEN,                                            XVUSR1404
+               HILIGHT=UNDERLINE                                        VUSR1405
+        DFHMDF POS=(16,121),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1406
+        DFHMDF POS=(17,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1407
+               INITIAL='NEWC days . . .:',                             XVUSR1408
+               COLOR=TURQUOISE                                          VUSR1409
+DETL-NEWC-DAYS DFHMDF                                                  XVUSR1410
+               POS=(17,018),LENGTH=003,ATTRB=(UNPROT,NORM,NUM),        XVUSR1411
+               COLOR=GREEN,                                            XVUSR1412
+               HILIGHT=UNDERLINE                                        VUSR1413
+        DFHMDF POS=(17,022),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1414
+        DFHMDF POS=(17,074),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1415
+               INITIAL='Department . . :',                             XVUSR1416
+               COLOR=TURQUOISE                                          VUSR1417
+DETL-DEPT-NAME DFHMDF                                                  XVUSR1418
+               POS=(17,091),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR1419
+               COLOR=GREEN                                              VUSR1420
+        DFHMDF POS=(17,122),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1421
+        DFHMDF POS=(18,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1422
+               INITIAL='     sort . . .:',                             XVUSR1423
+               COLOR=TURQUOISE                                          VUSR1424
+DETL-NEWC-SORT DFHMDF                                                  XVUSR1425
+               POS=(18,018),LENGTH=001,ATTRB=(UNPROT,NORM),            XVUSR1426
+               COLOR=GREEN,                                            XVUSR1427
+               HILIGHT=UNDERLINE                                        VUSR1428
+        DFHMDF POS=(18,020),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1429
+        DFHMDF POS=(18,074),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1430
+               INITIAL='Primary company:',                             XVUSR1431
+               JUSTIFY=(RIGHT,ZERO),                                   XVUSR1432
+               COLOR=TURQUOISE                                          VUSR1433
+DETL-PRIMARY-CO DFHMDF                                                 XVUSR1434
+               POS=(18,091),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1435
+               COLOR=GREEN                                              VUSR1436
+        DFHMDF POS=(18,097),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1437
+DETL-PRIM-CO-TEXT DFHMDF                                               XVUSR1438
+               POS=(18,101),LENGTH=020,ATTRB=(ASKIP,NORM),             XVUSR1439
+               COLOR=BLUE                                               VUSR1440
+        DFHMDF POS=(19,074),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1441
+               INITIAL='   "   industry:',                             XVUSR1442
+               COLOR=TURQUOISE                                          VUSR1443
+DETL-PRIMARY-IND DFHMDF                                                XVUSR1444
+               POS=(19,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1445
+               COLOR=GREEN                                              VUSR1446
+        DFHMDF POS=(19,093),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1447
+DETL-PRIM-IND-TEXT DFHMDF                                              XVUSR1448
+               POS=(19,101),LENGTH=020,ATTRB=(ASKIP,NORM),             XVUSR1449
+               COLOR=BLUE                                               VUSR1450
+        DFHMDF POS=(20,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1451
+               INITIAL='Service region :',                             XVUSR1452
+               COLOR=TURQUOISE                                          VUSR1453
+DETL-SVC-REGION DFHMDF                                                 XVUSR1454
+               POS=(20,018),LENGTH=002,ATTRB=(UNPROT,NORM,NUM),        XVUSR1455
+               COLOR=GREEN,                                            XVUSR1456
+               HILIGHT=UNDERLINE                                        VUSR1457
+        DFHMDF POS=(20,021),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1458
+DETL-ALT-REGION DFHMDF                                                 XVUSR1459
+               POS=(20,024),LENGTH=002,ATTRB=(UNPROT,NORM,NUM),        XVUSR1460
+               COLOR=GREEN,                                            XVUSR1461
+               HILIGHT=UNDERLINE                                        VUSR1462
+        DFHMDF POS=(20,027),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1463
+        DFHMDF POS=(20,036),LENGTH=025,ATTRB=(ASKIP,NORM),             XVUSR1464
+               INITIAL='(plus optional alternate)',                    XVUSR1465
+               COLOR=BLUE                                               VUSR1466
+        DFHMDF POS=(20,074),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1467
+               INITIAL='WIN function . :',                             XVUSR1468
+               COLOR=TURQUOISE                                          VUSR1469
+DETL-WIN-FUNCTION DFHMDF                                               XVUSR1470
+               POS=(20,091),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1471
+               COLOR=GREEN                                              VUSR1472
+        DFHMDF POS=(20,095),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1473
+DETL-WIN-FUNC-TEXT DFHMDF                                              XVUSR1474
+               POS=(20,101),LENGTH=020,ATTRB=(ASKIP,NORM),             XVUSR1475
+               COLOR=BLUE                                               VUSR1476
+        DFHMDF POS=(21,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1477
+               INITIAL='Report remote .:',                             XVUSR1478
+               COLOR=TURQUOISE                                          VUSR1479
+DETL-RPT-REMOTE DFHMDF                                                 XVUSR1480
+               POS=(21,018),LENGTH=003,ATTRB=(UNPROT,NORM,NUM),        XVUSR1481
+               COLOR=GREEN,                                            XVUSR1482
+               HILIGHT=UNDERLINE                                        VUSR1483
+        DFHMDF POS=(21,022),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1484
+DETL-ALT-REMOTE DFHMDF                                                 XVUSR1485
+               POS=(21,024),LENGTH=003,ATTRB=(UNPROT,NORM,NUM),        XVUSR1486
+               COLOR=GREEN,                                            XVUSR1487
+               HILIGHT=UNDERLINE                                        VUSR1488
+        DFHMDF POS=(21,028),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1489
+        DFHMDF POS=(21,036),LENGTH=025,ATTRB=(ASKIP,NORM),             XVUSR1490
+               INITIAL='(plus optional alternate)',                    XVUSR1491
+               COLOR=BLUE                                               VUSR1492
+        DFHMDF POS=(21,074),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1493
+               INITIAL=' "  unit . . . :',                             XVUSR1494
+               COLOR=TURQUOISE                                          VUSR1495
+DETL-WIN-UNIT DFHMDF                                                   XVUSR1496
+               POS=(21,091),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR1497
+               COLOR=GREEN                                              VUSR1498
+        DFHMDF POS=(21,102),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1499
+DETL-WIN-UNIT-TEXT DFHMDF                                              XVUSR1500
+               POS=(21,104),LENGTH=017,ATTRB=(ASKIP,NORM),             XVUSR1501
+               COLOR=BLUE                                               VUSR1502
+        DFHMDF POS=(22,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1503
+               INITIAL='Default printer:',                             XVUSR1504
+               COLOR=TURQUOISE                                          VUSR1505
+DETL-DFT-PRINTER DFHMDF                                                XVUSR1506
+               POS=(22,018),LENGTH=004,ATTRB=(UNPROT,NORM),            XVUSR1507
+               COLOR=GREEN,                                            XVUSR1508
+               HILIGHT=UNDERLINE                                        VUSR1509
+        DFHMDF POS=(22,023),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1510
+        DFHMDF POS=(22,074),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1511
+               INITIAL=' "  org. . . . :',                             XVUSR1512
+               COLOR=TURQUOISE                                          VUSR1513
+DETL-WIN-ORG DFHMDF                                                    XVUSR1514
+               POS=(22,091),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1515
+               COLOR=GREEN                                              VUSR1516
+        DFHMDF POS=(22,097),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1517
+DETL-WIN-ORG-TEXT DFHMDF                                               XVUSR1518
+               POS=(22,101),LENGTH=020,ATTRB=(ASKIP,NORM),             XVUSR1519
+               COLOR=BLUE                                               VUSR1520
+        DFHMDF POS=(23,074),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1521
+               INITIAL=' "  position . :',                             XVUSR1522
+               COLOR=TURQUOISE                                          VUSR1523
+DETL-WIN-POSITION DFHMDF                                               XVUSR1524
+               POS=(23,091),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1525
+               COLOR=GREEN                                              VUSR1526
+        DFHMDF POS=(23,097),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1527
+DETL-WIN-POS-TEXT DFHMDF                                               XVUSR1528
+               POS=(23,101),LENGTH=020,ATTRB=(ASKIP,NORM),             XVUSR1529
+               COLOR=BLUE                                               VUSR1530
+        DFHMDF POS=(24,001),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1531
+        DFHMDF POS=(24,074),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1532
+               INITIAL=' "  director . :',                             XVUSR1533
+               COLOR=TURQUOISE                                          VUSR1534
+DETL-WIN-DIRECTOR DFHMDF                                               XVUSR1535
+               POS=(24,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1536
+               COLOR=GREEN                                              VUSR1537
+        DFHMDF POS=(24,093),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1538
+DETL-WIN-DIR-TEXT DFHMDF                                               XVUSR1539
+               POS=(24,101),LENGTH=020,ATTRB=(ASKIP,NORM),             XVUSR1540
+               COLOR=BLUE                                               VUSR1541
+DETL-PASSWORD-LABEL DFHMDF                                             XVUSR1542
+               POS=(25,001),LENGTH=016,ATTRB=(ASKIP,NORM),             XVUSR1543
+               INITIAL='Password  . . .:',                             XVUSR1544
+               COLOR=TURQUOISE                                          VUSR1545
+DETL-PASSWORD DFHMDF                                                   XVUSR1546
+               POS=(25,018),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1547
+               COLOR=GREEN                                              VUSR1548
+        DFHMDF POS=(25,027),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1549
+DETL-PASSWORD-TEXT DFHMDF                                              XVUSR1550
+               POS=(25,036),LENGTH=029,ATTRB=(ASKIP,NORM),             XVUSR1551
+               INITIAL='(F5=Update in VUPM sets this)',                XVUSR1552
+               COLOR=BLUE                                               VUSR1553
+DETL-MESSAGE DFHMDF                                                    XVUSR1554
+               POS=(26,001),LENGTH=078,ATTRB=(ASKIP,BRT),              XVUSR1555
+               COLOR=RED                                                VUSR1556
+        DFHMDF POS=(26,080),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1557
+        DFHMDF POS=(27,001),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1558
+               INITIAL='Keys:',                                        XVUSR1559
+               COLOR=TURQUOISE                                          VUSR1560
+        DFHMDF POS=(27,007),LENGTH=002,ATTRB=(ASKIP,BRT),              XVUSR1561
+               INITIAL='F1'                                             VUSR1562
+        DFHMDF POS=(27,010),LENGTH=007,ATTRB=(ASKIP,NORM),             XVUSR1563
+               INITIAL='= Help,',                                      XVUSR1564
+               COLOR=PINK                                               VUSR1565
+        DFHMDF POS=(27,018),LENGTH=002,ATTRB=(ASKIP,BRT),              XVUSR1566
+               INITIAL='F3'                                             VUSR1567
+        DFHMDF POS=(27,021),LENGTH=006,ATTRB=(ASKIP,NORM),             XVUSR1568
+               INITIAL='= End,',                                       XVUSR1569
+               COLOR=PINK                                               VUSR1570
+        DFHMDF POS=(27,028),LENGTH=005,ATTRB=(ASKIP,BRT),              XVUSR1571
+               INITIAL='ENTER'                                          VUSR1572
+        DFHMDF POS=(27,034),LENGTH=009,ATTRB=(ASKIP,NORM),             XVUSR1573
+               INITIAL='= Update.',                                    XVUSR1574
+               COLOR=PINK                                               VUSR1575
+*                                                                       VUSR1576
+        PRINT  ON,GEN                                                   VUSR1577
+        TITLE  'T E S T W I N   ( 0 1 . 0 1 )   -   G E N E R A T I N GXVUSR1578
+                . . .   M E S S A G E   W I N D O W         '           VUSR1579
+TESTWIN DFHMDI SIZE=(27,132)                                            VUSR1580
+        PRINT  ON,NOGEN                                                 VUSR1581
+        DFHMDF POS=(07,033),LENGTH=064,ATTRB=(ASKIP,NORM),             XVUSR1582
+               XINIT=40404040404040404040404040404040404040404040404040XVUSR1583
+               40404040404040404040404040404040404040404040404040404040XVUSR1584
+               4040404040404040404040,                                 XVUSR1585
+               COLOR=TURQUOISE,                                        XVUSR1586
+               HILIGHT=REVERSE                                          VUSR1587
+        DFHMDF POS=(07,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1588
+               COLOR=BLUE                                               VUSR1589
+        DFHMDF POS=(08,033),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1590
+               XINIT=4040,                                             XVUSR1591
+               COLOR=TURQUOISE,                                        XVUSR1592
+               HILIGHT=REVERSE                                          VUSR1593
+        DFHMDF POS=(08,036),LENGTH=058,ATTRB=(ASKIP,BRT),              XVUSR1594
+               INITIAL='                 WinSecurity Test Results',    XVUSR1595
+               COLOR=NEUTRAL                                            VUSR1596
+        DFHMDF POS=(08,095),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1597
+               XINIT=4040,                                             XVUSR1598
+               COLOR=TURQUOISE,                                        XVUSR1599
+               HILIGHT=REVERSE                                          VUSR1600
+        DFHMDF POS=(08,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1601
+               COLOR=BLUE                                               VUSR1602
+        DFHMDF POS=(09,033),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1603
+               XINIT=4040,                                             XVUSR1604
+               COLOR=TURQUOISE,                                        XVUSR1605
+               HILIGHT=REVERSE                                          VUSR1606
+        DFHMDF POS=(09,036),LENGTH=058,ATTRB=(ASKIP,NORM),             XVUSR1607
+               XINIT=40404040404040404040404040404040404040404040404040XVUSR1608
+               40404040404040404040404040404040404040404040404040404040XVUSR1609
+               4040404040,                                             XVUSR1610
+               COLOR=BLUE                                               VUSR1611
+        DFHMDF POS=(09,095),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1612
+               XINIT=4040,                                             XVUSR1613
+               COLOR=TURQUOISE,                                        XVUSR1614
+               HILIGHT=REVERSE                                          VUSR1615
+        DFHMDF POS=(09,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1616
+               COLOR=BLUE                                               VUSR1617
+        DFHMDF POS=(10,033),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1618
+               XINIT=4040,                                             XVUSR1619
+               COLOR=TURQUOISE,                                        XVUSR1620
+               HILIGHT=REVERSE                                          VUSR1621
+        DFHMDF POS=(10,036),LENGTH=018,ATTRB=(ASKIP,NORM),             XVUSR1622
+               INITIAL='User id ..........',                           XVUSR1623
+               COLOR=TURQUOISE                                          VUSR1624
+TEST-USERID DFHMDF                                                     XVUSR1625
+               POS=(10,055),LENGTH=008,ATTRB=(ASKIP,NORM,FSET),        XVUSR1626
+               COLOR=YELLOW                                             VUSR1627
+        DFHMDF POS=(10,064),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1628
+        DFHMDF POS=(10,066),LENGTH=017,ATTRB=(ASKIP,NORM),             XVUSR1629
+               INITIAL='Win Function ....',                            XVUSR1630
+               COLOR=TURQUOISE                                          VUSR1631
+TEST-WIN-FUNC DFHMDF                                                   XVUSR1632
+               POS=(10,084),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1633
+               COLOR=GREEN                                              VUSR1634
+        DFHMDF POS=(10,088),LENGTH=006,ATTRB=(ASKIP,NORM),             XVUSR1635
+               XINIT=404040404040,                                     XVUSR1636
+               COLOR=TURQUOISE                                          VUSR1637
+        DFHMDF POS=(10,095),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1638
+               XINIT=4040,                                             XVUSR1639
+               COLOR=TURQUOISE,                                        XVUSR1640
+               HILIGHT=REVERSE                                          VUSR1641
+        DFHMDF POS=(10,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1642
+               COLOR=BLUE                                               VUSR1643
+        DFHMDF POS=(11,033),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1644
+               XINIT=4040,                                             XVUSR1645
+               COLOR=TURQUOISE,                                        XVUSR1646
+               HILIGHT=REVERSE                                          VUSR1647
+        DFHMDF POS=(11,036),LENGTH=018,ATTRB=(ASKIP,NORM),             XVUSR1648
+               INITIAL='Company ..........',                           XVUSR1649
+               COLOR=TURQUOISE                                          VUSR1650
+TEST-COMPANY DFHMDF                                                    XVUSR1651
+               POS=(11,055),LENGTH=005,ATTRB=(UNPROT,NORM,FSET,IC),    XVUSR1652
+               JUSTIFY=(RIGHT,ZERO),                                   XVUSR1653
+               COLOR=GREEN,                                            XVUSR1654
+               HILIGHT=UNDERLINE                                        VUSR1655
+        DFHMDF POS=(11,061),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VUSR1656
+        DFHMDF POS=(11,063),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1657
+               XINIT=4040,                                             XVUSR1658
+               COLOR=TURQUOISE                                          VUSR1659
+        DFHMDF POS=(11,066),LENGTH=017,ATTRB=(ASKIP,NORM),             XVUSR1660
+               INITIAL=' "  Unit ........',                            XVUSR1661
+               COLOR=TURQUOISE                                          VUSR1662
+TEST-WIN-UNIT DFHMDF                                                   XVUSR1663
+               POS=(11,084),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR1664
+               COLOR=GREEN                                              VUSR1665
+        DFHMDF POS=(11,095),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1666
+               XINIT=4040,                                             XVUSR1667
+               COLOR=TURQUOISE,                                        XVUSR1668
+               HILIGHT=REVERSE                                          VUSR1669
+        DFHMDF POS=(11,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1670
+               COLOR=BLUE                                               VUSR1671
+        DFHMDF POS=(12,033),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1672
+               XINIT=4040,                                             XVUSR1673
+               COLOR=TURQUOISE,                                        XVUSR1674
+               HILIGHT=REVERSE                                          VUSR1675
+        DFHMDF POS=(12,036),LENGTH=018,ATTRB=(ASKIP,NORM),             XVUSR1676
+               INITIAL='Access ...........',                           XVUSR1677
+               COLOR=TURQUOISE                                          VUSR1678
+TEST-ACCESS DFHMDF                                                     XVUSR1679
+               POS=(12,055),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR1680
+               COLOR=GREEN                                              VUSR1681
+        DFHMDF POS=(12,066),LENGTH=017,ATTRB=(ASKIP,NORM),             XVUSR1682
+               INITIAL=' "  Org .........',                            XVUSR1683
+               COLOR=TURQUOISE                                          VUSR1684
+TEST-WIN-ORG DFHMDF                                                    XVUSR1685
+               POS=(12,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1686
+               COLOR=GREEN                                              VUSR1687
+        DFHMDF POS=(12,090),LENGTH=004,ATTRB=(ASKIP,NORM),             XVUSR1688
+               XINIT=40404040,                                         XVUSR1689
+               COLOR=TURQUOISE                                          VUSR1690
+        DFHMDF POS=(12,095),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1691
+               XINIT=4040,                                             XVUSR1692
+               COLOR=TURQUOISE,                                        XVUSR1693
+               HILIGHT=REVERSE                                          VUSR1694
+        DFHMDF POS=(12,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1695
+               COLOR=BLUE                                               VUSR1696
+        DFHMDF POS=(13,033),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1697
+               XINIT=4040,                                             XVUSR1698
+               COLOR=TURQUOISE,                                        XVUSR1699
+               HILIGHT=REVERSE                                          VUSR1700
+        DFHMDF POS=(13,036),LENGTH=029,ATTRB=(ASKIP,NORM),             XVUSR1701
+               XINIT=40404040404040404040404040404040404040404040404040XVUSR1702
+               40404040,                                               XVUSR1703
+               COLOR=TURQUOISE                                          VUSR1704
+        DFHMDF POS=(13,066),LENGTH=017,ATTRB=(ASKIP,NORM),             XVUSR1705
+               INITIAL=' "  Position ....',                            XVUSR1706
+               COLOR=TURQUOISE                                          VUSR1707
+TEST-WIN-POS DFHMDF                                                    XVUSR1708
+               POS=(13,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1709
+               COLOR=GREEN                                              VUSR1710
+        DFHMDF POS=(13,090),LENGTH=004,ATTRB=(ASKIP,NORM),             XVUSR1711
+               XINIT=40404040,                                         XVUSR1712
+               COLOR=TURQUOISE                                          VUSR1713
+        DFHMDF POS=(13,095),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1714
+               XINIT=4040,                                             XVUSR1715
+               COLOR=TURQUOISE,                                        XVUSR1716
+               HILIGHT=REVERSE                                          VUSR1717
+        DFHMDF POS=(13,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1718
+               COLOR=BLUE                                               VUSR1719
+        DFHMDF POS=(14,033),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1720
+               XINIT=4040,                                             XVUSR1721
+               COLOR=TURQUOISE,                                        XVUSR1722
+               HILIGHT=REVERSE                                          VUSR1723
+        DFHMDF POS=(14,036),LENGTH=018,ATTRB=(ASKIP,NORM),             XVUSR1724
+               INITIAL='Service region ...',                           XVUSR1725
+               COLOR=TURQUOISE                                          VUSR1726
+TEST-SVCRGN DFHMDF                                                     XVUSR1727
+               POS=(14,055),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1728
+               COLOR=GREEN                                              VUSR1729
+        DFHMDF POS=(14,058),LENGTH=007,ATTRB=(ASKIP,NORM),             XVUSR1730
+               XINIT=40404040404040,                                   XVUSR1731
+               COLOR=TURQUOISE                                          VUSR1732
+        DFHMDF POS=(14,066),LENGTH=017,ATTRB=(ASKIP,NORM),             XVUSR1733
+               INITIAL=' "  Director ....',                            XVUSR1734
+               COLOR=TURQUOISE                                          VUSR1735
+TEST-WIN-DIR DFHMDF                                                    XVUSR1736
+               POS=(14,084),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1737
+               COLOR=GREEN                                              VUSR1738
+        DFHMDF POS=(14,086),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1739
+               XINIT=4040404040404040,                                 XVUSR1740
+               COLOR=TURQUOISE                                          VUSR1741
+        DFHMDF POS=(14,095),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1742
+               XINIT=4040,                                             XVUSR1743
+               COLOR=TURQUOISE,                                        XVUSR1744
+               HILIGHT=REVERSE                                          VUSR1745
+        DFHMDF POS=(14,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1746
+               COLOR=BLUE                                               VUSR1747
+        DFHMDF POS=(15,033),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1748
+               XINIT=4040,                                             XVUSR1749
+               COLOR=TURQUOISE,                                        XVUSR1750
+               HILIGHT=REVERSE                                          VUSR1751
+        DFHMDF POS=(15,036),LENGTH=018,ATTRB=(ASKIP,NORM),             XVUSR1752
+               INITIAL='   Alt. region ...',                           XVUSR1753
+               COLOR=TURQUOISE                                          VUSR1754
+TEST-ALTRGN DFHMDF                                                     XVUSR1755
+               POS=(15,055),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1756
+               COLOR=GREEN                                              VUSR1757
+        DFHMDF POS=(15,058),LENGTH=007,ATTRB=(ASKIP,NORM),             XVUSR1758
+               XINIT=40404040404040,                                   XVUSR1759
+               COLOR=TURQUOISE                                          VUSR1760
+        DFHMDF POS=(15,066),LENGTH=017,ATTRB=(ASKIP,NORM),             XVUSR1761
+               INITIAL='Old Dapsco code .',                            XVUSR1762
+               COLOR=TURQUOISE                                          VUSR1763
+TEST-OLDDAP DFHMDF                                                     XVUSR1764
+               POS=(15,084),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1765
+               COLOR=GREEN                                              VUSR1766
+        DFHMDF POS=(15,086),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1767
+               XINIT=4040404040404040,                                 XVUSR1768
+               COLOR=TURQUOISE                                          VUSR1769
+        DFHMDF POS=(15,095),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1770
+               XINIT=4040,                                             XVUSR1771
+               COLOR=TURQUOISE,                                        XVUSR1772
+               HILIGHT=REVERSE                                          VUSR1773
+        DFHMDF POS=(15,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1774
+               COLOR=BLUE                                               VUSR1775
+        DFHMDF POS=(16,033),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1776
+               XINIT=4040,                                             XVUSR1777
+               COLOR=TURQUOISE,                                        XVUSR1778
+               HILIGHT=REVERSE                                          VUSR1779
+        DFHMDF POS=(16,036),LENGTH=018,ATTRB=(ASKIP,NORM),             XVUSR1780
+               INITIAL='Report remote ....',                           XVUSR1781
+               COLOR=TURQUOISE                                          VUSR1782
+TEST-RPTRMT DFHMDF                                                     XVUSR1783
+               POS=(16,055),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1784
+               COLOR=GREEN                                              VUSR1785
+        DFHMDF POS=(16,059),LENGTH=006,ATTRB=(ASKIP,NORM),             XVUSR1786
+               XINIT=404040404040,                                     XVUSR1787
+               COLOR=TURQUOISE                                          VUSR1788
+        DFHMDF POS=(16,066),LENGTH=017,ATTRB=(ASKIP,NORM),             XVUSR1789
+               INITIAL=' "  User class ..',                            XVUSR1790
+               COLOR=TURQUOISE                                          VUSR1791
+TEST-OLDCLS DFHMDF                                                     XVUSR1792
+               POS=(16,084),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1793
+               COLOR=GREEN                                              VUSR1794
+        DFHMDF POS=(16,087),LENGTH=007,ATTRB=(ASKIP,NORM),             XVUSR1795
+               XINIT=40404040404040,                                   XVUSR1796
+               COLOR=TURQUOISE                                          VUSR1797
+        DFHMDF POS=(16,095),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1798
+               XINIT=4040,                                             XVUSR1799
+               COLOR=TURQUOISE,                                        XVUSR1800
+               HILIGHT=REVERSE                                          VUSR1801
+        DFHMDF POS=(16,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1802
+               COLOR=BLUE                                               VUSR1803
+        DFHMDF POS=(17,033),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1804
+               XINIT=4040,                                             XVUSR1805
+               COLOR=TURQUOISE,                                        XVUSR1806
+               HILIGHT=REVERSE                                          VUSR1807
+        DFHMDF POS=(17,036),LENGTH=018,ATTRB=(ASKIP,NORM),             XVUSR1808
+               INITIAL='  Alt. remote ....',                           XVUSR1809
+               COLOR=TURQUOISE                                          VUSR1810
+TEST-ALTRMT DFHMDF                                                     XVUSR1811
+               POS=(17,055),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1812
+               COLOR=GREEN                                              VUSR1813
+        DFHMDF POS=(17,059),LENGTH=006,ATTRB=(ASKIP,NORM),             XVUSR1814
+               XINIT=404040404040,                                     XVUSR1815
+               COLOR=TURQUOISE                                          VUSR1816
+        DFHMDF POS=(17,066),LENGTH=017,ATTRB=(ASKIP,NORM),             XVUSR1817
+               INITIAL=' "  Terminal grp.',                            XVUSR1818
+               COLOR=TURQUOISE                                          VUSR1819
+TEST-OLDGRP DFHMDF                                                     XVUSR1820
+               POS=(17,084),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1821
+               COLOR=GREEN                                              VUSR1822
+        DFHMDF POS=(17,087),LENGTH=007,ATTRB=(ASKIP,NORM),             XVUSR1823
+               XINIT=40404040404040,                                   XVUSR1824
+               COLOR=TURQUOISE                                          VUSR1825
+        DFHMDF POS=(17,095),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1826
+               XINIT=4040,                                             XVUSR1827
+               COLOR=TURQUOISE,                                        XVUSR1828
+               HILIGHT=REVERSE                                          VUSR1829
+        DFHMDF POS=(17,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1830
+               COLOR=BLUE                                               VUSR1831
+        DFHMDF POS=(18,033),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1832
+               XINIT=4040,                                             XVUSR1833
+               COLOR=TURQUOISE,                                        XVUSR1834
+               HILIGHT=REVERSE                                          VUSR1835
+        DFHMDF POS=(18,036),LENGTH=018,ATTRB=(ASKIP,NORM),             XVUSR1836
+               INITIAL='Dft. printer .....',                           XVUSR1837
+               COLOR=TURQUOISE                                          VUSR1838
+TEST-DFTPTR DFHMDF                                                     XVUSR1839
+               POS=(18,055),LENGTH=004,ATTRB=(ASKIP,NORM),             XVUSR1840
+               COLOR=GREEN                                              VUSR1841
+        DFHMDF POS=(18,060),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1842
+               XINIT=4040404040,                                       XVUSR1843
+               COLOR=TURQUOISE                                          VUSR1844
+        DFHMDF POS=(18,066),LENGTH=017,ATTRB=(ASKIP,NORM),             XVUSR1845
+               INITIAL=' "  Level(0-9) ..',                            XVUSR1846
+               COLOR=TURQUOISE                                          VUSR1847
+TEST-OLDLVL DFHMDF                                                     XVUSR1848
+               POS=(18,084),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1849
+               COLOR=GREEN                                              VUSR1850
+        DFHMDF POS=(18,086),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1851
+               XINIT=4040404040404040,                                 XVUSR1852
+               COLOR=TURQUOISE                                          VUSR1853
+        DFHMDF POS=(18,095),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1854
+               XINIT=4040,                                             XVUSR1855
+               COLOR=TURQUOISE,                                        XVUSR1856
+               HILIGHT=REVERSE                                          VUSR1857
+        DFHMDF POS=(18,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1858
+               COLOR=BLUE                                               VUSR1859
+        DFHMDF POS=(19,033),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1860
+               XINIT=4040,                                             XVUSR1861
+               COLOR=TURQUOISE,                                        XVUSR1862
+               HILIGHT=REVERSE                                          VUSR1863
+TEST-MESSAGE DFHMDF                                                    XVUSR1864
+               POS=(19,036),LENGTH=058,ATTRB=(ASKIP,BRT),              XVUSR1865
+               XINIT=40404040404040404040404040404040404040404040404040XVUSR1866
+               40404040404040404040404040404040404040404040404040404040XVUSR1867
+               4040404040,                                             XVUSR1868
+               COLOR=RED                                                VUSR1869
+        DFHMDF POS=(19,095),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1870
+               XINIT=4040,                                             XVUSR1871
+               COLOR=TURQUOISE,                                        XVUSR1872
+               HILIGHT=REVERSE                                          VUSR1873
+        DFHMDF POS=(19,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1874
+               COLOR=BLUE                                               VUSR1875
+        DFHMDF POS=(20,033),LENGTH=064,ATTRB=(ASKIP,NORM),             XVUSR1876
+               INITIAL='   Keys: F1 = Help, F3 = Exit, ENTER = Retest  XVUSR1877
+                              ',                                       XVUSR1878
+               COLOR=TURQUOISE,                                        XVUSR1879
+               HILIGHT=REVERSE                                          VUSR1880
+        DFHMDF POS=(20,098),LENGTH=000,ATTRB=(ASKIP,NORM),             XVUSR1881
+               COLOR=BLUE                                               VUSR1882
+*                                                                       VUSR1883
+        PRINT  ON,GEN                                                   VUSR1884
+        TITLE  'W A I T W I N   ( 0 1 . 0 0 )   -   G E N E R A T I N GXVUSR1885
+                . . .   M E S S A G E   W I N D O W         '           VUSR1886
+WAITWIN DFHMDI SIZE=(27,132)                                            VUSR1887
+        PRINT  ON,NOGEN                                                 VUSR1888
+        DFHMDF POS=(11,055),LENGTH=021,ATTRB=(ASKIP,NORM),             XVUSR1889
+               XINIT=404040404040404040404040404040404040404040,       XVUSR1890
+               COLOR=TURQUOISE,                                        XVUSR1891
+               HILIGHT=REVERSE                                          VUSR1892
+        DFHMDF POS=(11,077),LENGTH=000,ATTRB=(ASKIP,NORM)               VUSR1893
+        DFHMDF POS=(12,055),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1894
+               XINIT=4040,                                             XVUSR1895
+               COLOR=TURQUOISE,                                        XVUSR1896
+               HILIGHT=REVERSE                                          VUSR1897
+        DFHMDF POS=(12,058),LENGTH=015,ATTRB=(ASKIP,NORM),             XVUSR1898
+               XINIT=404040404040404040404040404040                     VUSR1899
+        DFHMDF POS=(12,074),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1900
+               XINIT=4040,                                             XVUSR1901
+               COLOR=TURQUOISE,                                        XVUSR1902
+               HILIGHT=REVERSE                                          VUSR1903
+        DFHMDF POS=(12,077),LENGTH=000,ATTRB=(ASKIP,NORM)               VUSR1904
+        DFHMDF POS=(13,055),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1905
+               XINIT=4040,                                             XVUSR1906
+               COLOR=TURQUOISE,                                        XVUSR1907
+               HILIGHT=REVERSE                                          VUSR1908
+WAIT-MESSAGE DFHMDF                                                    XVUSR1909
+               POS=(13,058),LENGTH=015,ATTRB=(ASKIP,BRT),              XVUSR1910
+               INITIAL='Generating...',                                XVUSR1911
+               COLOR=RED,                                              XVUSR1912
+               HILIGHT=BLINK                                            VUSR1913
+        DFHMDF POS=(13,074),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1914
+               XINIT=4040,                                             XVUSR1915
+               COLOR=TURQUOISE,                                        XVUSR1916
+               HILIGHT=REVERSE                                          VUSR1917
+        DFHMDF POS=(13,077),LENGTH=000,ATTRB=(ASKIP,NORM)               VUSR1918
+        DFHMDF POS=(14,055),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1919
+               XINIT=4040,                                             XVUSR1920
+               COLOR=TURQUOISE,                                        XVUSR1921
+               HILIGHT=REVERSE                                          VUSR1922
+        DFHMDF POS=(14,058),LENGTH=015,ATTRB=(ASKIP,NORM),             XVUSR1923
+               XINIT=404040404040404040404040404040                     VUSR1924
+        DFHMDF POS=(14,074),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1925
+               XINIT=4040,                                             XVUSR1926
+               COLOR=TURQUOISE,                                        XVUSR1927
+               HILIGHT=REVERSE                                          VUSR1928
+        DFHMDF POS=(14,077),LENGTH=000,ATTRB=(ASKIP,NORM)               VUSR1929
+        DFHMDF POS=(15,055),LENGTH=021,ATTRB=(ASKIP,NORM),             XVUSR1930
+               XINIT=404040404040404040404040404040404040404040,       XVUSR1931
+               COLOR=TURQUOISE,                                        XVUSR1932
+               HILIGHT=REVERSE                                          VUSR1933
+        DFHMDF POS=(15,077),LENGTH=000,ATTRB=(ASKIP,NORM)               VUSR1934
+*                                                                       VUSR1935
+        PRINT  ON,GEN                                                   VUSR1936
+        TITLE  'L I S T X X X   ( 0 1 . 0 3 )   -   D E F A U L T   L IXVUSR1937
+                S T   M A P   F O R   1 3 2   C O L U M N S '           VUSR1938
+LISTXXX DFHMDI SIZE=(27,132)                                            VUSR1939
+        PRINT  ON,NOGEN                                                 VUSR1940
+        DFHMDF POS=(06,005),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1941
+               COLOR=YELLOW                                             VUSR1942
+        DFHMDF POS=(06,016),LENGTH=004,ATTRB=(ASKIP,NORM),             XVUSR1943
+               COLOR=YELLOW                                             VUSR1944
+        DFHMDF POS=(06,023),LENGTH=030,ATTRB=(ASKIP,NORM),             XVUSR1945
+               COLOR=GREEN                                              VUSR1946
+        DFHMDF POS=(06,056),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1947
+               COLOR=GREEN                                              VUSR1948
+        DFHMDF POS=(06,061),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1949
+               COLOR=GREEN                                              VUSR1950
+        DFHMDF POS=(06,064),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1951
+               COLOR=GREEN                                              VUSR1952
+        DFHMDF POS=(06,073),LENGTH=008,ATTRB=(ASKIP,NORM),             XVUSR1953
+               COLOR=GREEN                                              VUSR1954
+        DFHMDF POS=(06,084),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1955
+               COLOR=GREEN                                              VUSR1956
+        DFHMDF POS=(06,091),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1957
+               COLOR=GREEN                                              VUSR1958
+        DFHMDF POS=(06,094),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1959
+               COLOR=GREEN                                              VUSR1960
+        DFHMDF POS=(06,098),LENGTH=010,ATTRB=(ASKIP,NORM),             XVUSR1961
+               COLOR=GREEN                                              VUSR1962
+        DFHMDF POS=(06,109),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1963
+               COLOR=GREEN                                              VUSR1964
+        DFHMDF POS=(06,115),LENGTH=005,ATTRB=(ASKIP,NORM),             XVUSR1965
+               COLOR=GREEN                                              VUSR1966
+        DFHMDF POS=(06,122),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1967
+               COLOR=GREEN                                              VUSR1968
+        DFHMDF POS=(06,125),LENGTH=002,ATTRB=(ASKIP,NORM),             XVUSR1969
+               COLOR=GREEN                                              VUSR1970
+        DFHMDF POS=(06,129),LENGTH=003,ATTRB=(ASKIP,NORM),             XVUSR1971
+               COLOR=GREEN                                              VUSR1972
+        DFHMDF POS=(07,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1973
+               COLOR=YELLOW                                             VUSR1974
+        DFHMDF POS=(08,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1975
+               COLOR=YELLOW                                             VUSR1976
+        DFHMDF POS=(09,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1977
+               COLOR=YELLOW                                             VUSR1978
+        DFHMDF POS=(10,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1979
+               COLOR=YELLOW                                             VUSR1980
+        DFHMDF POS=(11,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1981
+               COLOR=YELLOW                                             VUSR1982
+        DFHMDF POS=(12,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1983
+               COLOR=YELLOW                                             VUSR1984
+        DFHMDF POS=(13,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1985
+               COLOR=YELLOW                                             VUSR1986
+        DFHMDF POS=(14,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1987
+               COLOR=YELLOW                                             VUSR1988
+        DFHMDF POS=(15,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1989
+               COLOR=YELLOW                                             VUSR1990
+        DFHMDF POS=(16,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1991
+               COLOR=YELLOW                                             VUSR1992
+        DFHMDF POS=(17,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1993
+               COLOR=YELLOW                                             VUSR1994
+        DFHMDF POS=(18,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1995
+               COLOR=YELLOW                                             VUSR1996
+        DFHMDF POS=(19,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1997
+               COLOR=YELLOW                                             VUSR1998
+        DFHMDF POS=(20,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR1999
+               COLOR=YELLOW                                             VUSR2000
+        DFHMDF POS=(21,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR2001
+               COLOR=YELLOW                                             VUSR2002
+        DFHMDF POS=(22,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR2003
+               COLOR=YELLOW                                             VUSR2004
+        DFHMDF POS=(23,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR2005
+               COLOR=YELLOW                                             VUSR2006
+        DFHMDF POS=(24,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVUSR2007
+               COLOR=YELLOW                                             VUSR2008
+*                                                                       VUSR2009
+        PRINT  ON,GEN                                                   VUSR2010
+        TITLE  'V U S R M S     ( 0 1 . 1 2 )   -   V I E W   V O P E RXVUSR2011
+                I D   U S E R   F I L E                     '           VUSR2012
+        DFHMSD TYPE=FINAL                                               VUSR2013
