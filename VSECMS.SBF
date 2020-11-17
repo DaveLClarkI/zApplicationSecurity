@@ -1,0 +1,1521 @@
+* ¦¦¦¦¦¦ SBF SOURCE VSECMS                                                      
+VSEC    TITLE  'V S E C M S     ( 0 1 . 2 4 )   -   V I E W   S E C U RXVSEC0001
+                I T Y   M A P S E T                         '           VSEC0002
+VSECMS  DFHMSD TYPE=&SYSPARM,                                          XVSEC0003
+               STORAGE=AUTO,                                           XVSEC0004
+               DATA=FIELD,                                             XVSEC0005
+               DSATTS=(COLOR,HILIGHT),                                 XVSEC0006
+               LANG=COBOL,                                             XVSEC0007
+               MAPATTS=(COLOR,HILIGHT),                                XVSEC0008
+               MODE=INOUT,                                             XVSEC0009
+               TERM=3270,                                              XVSEC0010
+               TIOAPFX=YES                                              VSEC0011
+*                                                                       VSEC0012
+        PRINT  ON,GEN                                                   VSEC0013
+        TITLE  'L I S T M A P   ( 0 1 . 3 2 )   -   V I E W   S E C U RXVSEC0014
+                I T Y   L I S T I N G   M A P               '           VSEC0015
+LISTMAP DFHMDI SIZE=(24,080)                                            VSEC0016
+*              ROW=07,THRU=07,OCCURS=15                                 VSEC0017
+        PRINT  ON,NOGEN                                                 VSEC0018
+        DFHMDF POS=(01,001),LENGTH=008,ATTRB=(ASKIP,NORM),             XVSEC0019
+               INITIAL='VSEC    ',                                     XVSEC0020
+               COLOR=BLUE                                               VSEC0021
+* CBLDNM LABEL=LIST-COMPANY                                             VSEC0022
+F010020 DFHMDF POS=(01,020),LENGTH=040,ATTRB=(ASKIP,BRT),              XVSEC0023
+               COLOR=TURQUOISE                                          VSEC0024
+* CBLDNM LABEL=LIST-SYSDATE                                             VSEC0025
+F010069 DFHMDF POS=(01,069),LENGTH=010,ATTRB=(ASKIP,NORM),             XVSEC0026
+               INITIAL='mm/dd/yyyy',                                   XVSEC0027
+               COLOR=BLUE                                               VSEC0028
+        DFHMDF POS=(02,001),LENGTH=005,ATTRB=(ASKIP,NORM),             XVSEC0029
+               INITIAL='Term:',                                        XVSEC0030
+               COLOR=BLUE                                               VSEC0031
+* CBLDNM LABEL=LIST-TERMID                                              VSEC0032
+F010087 DFHMDF POS=(02,007),LENGTH=008,ATTRB=(ASKIP,NORM),             XVSEC0033
+               COLOR=BLUE                                               VSEC0034
+* CBLDNM LABEL=LIST-TITLE                                               VSEC0035
+F010100 DFHMDF POS=(02,020),LENGTH=040,ATTRB=(ASKIP,BRT)                VSEC0036
+* CBLDNM LABEL=LIST-SYSTIME                                             VSEC0037
+F010149 DFHMDF POS=(02,069),LENGTH=010,ATTRB=(ASKIP,NORM),             XVSEC0038
+               INITIAL='hh:mm xx',                                     XVSEC0039
+               COLOR=BLUE                                               VSEC0040
+        DFHMDF POS=(03,001),LENGTH=001,ATTRB=(PROT,BRT),INITIAL=' '     VSEC0041
+        DFHMDF POS=(04,001),LENGTH=009,ATTRB=(ASKIP,NORM),             XVSEC0042
+               INITIAL=' Skip to:',                                    XVSEC0043
+               COLOR=TURQUOISE                                          VSEC0044
+* CBLDNM LABEL=LIST-SKIP-TO                                             VSEC0045
+F010251 DFHMDF POS=(04,011),LENGTH=025,ATTRB=(UNPROT,NORM,IC),         XVSEC0046
+               COLOR=YELLOW,                                           XVSEC0047
+               HILIGHT=UNDERLINE                                        VSEC0048
+        DFHMDF POS=(04,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0049
+        DFHMDF POS=(05,001),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0050
+        DFHMDF POS=(06,001),LENGTH=001,ATTRB=(ASKIP,BRT),              XVSEC0051
+               INITIAL='O',                                            XVSEC0052
+               COLOR=TURQUOISE,                                        XVSEC0053
+               HILIGHT=UNDERLINE                                        VSEC0054
+        DFHMDF POS=(06,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0055
+        DFHMDF POS=(06,005),LENGTH=031,ATTRB=(ASKIP,BRT),              XVSEC0056
+               INITIAL='      Resource Identifier      ',              XVSEC0057
+               COLOR=TURQUOISE,                                        XVSEC0058
+               HILIGHT=UNDERLINE                                        VSEC0059
+        DFHMDF POS=(06,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0060
+        DFHMDF POS=(06,039),LENGTH=020,ATTRB=(ASKIP,BRT),              XVSEC0061
+               INITIAL='    Description     ',                         XVSEC0062
+               COLOR=TURQUOISE,                                        XVSEC0063
+               HILIGHT=UNDERLINE                                        VSEC0064
+        DFHMDF POS=(06,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0065
+* CBLDNM LABEL=LIST-UNV-ACCS-LABEL                                      VSEC0066
+F010462 DFHMDF POS=(06,062),LENGTH=007,ATTRB=(ASKIP,NORM),             XVSEC0067
+               INITIAL='UAccess',                                      XVSEC0068
+               COLOR=TURQUOISE,                                        XVSEC0069
+               HILIGHT=UNDERLINE                                        VSEC0070
+        DFHMDF POS=(06,070),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0071
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0072
+F010481 DFHMDF POS=(07,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0073
+               COLOR=YELLOW,                                           XVSEC0074
+               HILIGHT=UNDERLINE                                        VSEC0075
+        DFHMDF POS=(07,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0076
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0077
+F010485 DFHMDF POS=(07,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0078
+               COLOR=YELLOW                                             VSEC0079
+        DFHMDF POS=(07,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0080
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0081
+F010519 DFHMDF POS=(07,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0082
+               COLOR=GREEN,                                            XVSEC0083
+               HILIGHT=UNDERLINE                                        VSEC0084
+        DFHMDF POS=(07,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0085
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0086
+F010545 DFHMDF POS=(07,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0087
+               COLOR=GREEN,                                            XVSEC0088
+               HILIGHT=UNDERLINE                                        VSEC0089
+        DFHMDF POS=(07,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0090
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0091
+F010561 DFHMDF POS=(08,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0092
+               COLOR=YELLOW,                                           XVSEC0093
+               HILIGHT=UNDERLINE                                        VSEC0094
+        DFHMDF POS=(08,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0095
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0096
+F010565 DFHMDF POS=(08,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0097
+               COLOR=YELLOW                                             VSEC0098
+        DFHMDF POS=(08,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0099
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0100
+F010599 DFHMDF POS=(08,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0101
+               COLOR=GREEN,                                            XVSEC0102
+               HILIGHT=UNDERLINE                                        VSEC0103
+        DFHMDF POS=(08,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0104
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0105
+F010625 DFHMDF POS=(08,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0106
+               COLOR=GREEN,                                            XVSEC0107
+               HILIGHT=UNDERLINE                                        VSEC0108
+        DFHMDF POS=(08,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0109
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0110
+F010641 DFHMDF POS=(09,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0111
+               COLOR=YELLOW,                                           XVSEC0112
+               HILIGHT=UNDERLINE                                        VSEC0113
+        DFHMDF POS=(09,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0114
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0115
+F010645 DFHMDF POS=(09,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0116
+               COLOR=YELLOW                                             VSEC0117
+        DFHMDF POS=(09,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0118
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0119
+F010679 DFHMDF POS=(09,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0120
+               COLOR=GREEN,                                            XVSEC0121
+               HILIGHT=UNDERLINE                                        VSEC0122
+        DFHMDF POS=(09,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0123
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0124
+F010705 DFHMDF POS=(09,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0125
+               COLOR=GREEN,                                            XVSEC0126
+               HILIGHT=UNDERLINE                                        VSEC0127
+        DFHMDF POS=(09,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0128
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0129
+F010721 DFHMDF POS=(10,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0130
+               COLOR=YELLOW,                                           XVSEC0131
+               HILIGHT=UNDERLINE                                        VSEC0132
+        DFHMDF POS=(10,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0133
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0134
+F010725 DFHMDF POS=(10,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0135
+               COLOR=YELLOW                                             VSEC0136
+        DFHMDF POS=(10,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0137
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0138
+F010759 DFHMDF POS=(10,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0139
+               COLOR=GREEN,                                            XVSEC0140
+               HILIGHT=UNDERLINE                                        VSEC0141
+        DFHMDF POS=(10,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0142
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0143
+F010785 DFHMDF POS=(10,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0144
+               COLOR=GREEN,                                            XVSEC0145
+               HILIGHT=UNDERLINE                                        VSEC0146
+        DFHMDF POS=(10,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0147
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0148
+F010801 DFHMDF POS=(11,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0149
+               COLOR=YELLOW,                                           XVSEC0150
+               HILIGHT=UNDERLINE                                        VSEC0151
+        DFHMDF POS=(11,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0152
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0153
+F010805 DFHMDF POS=(11,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0154
+               COLOR=YELLOW                                             VSEC0155
+        DFHMDF POS=(11,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0156
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0157
+F010839 DFHMDF POS=(11,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0158
+               COLOR=GREEN,                                            XVSEC0159
+               HILIGHT=UNDERLINE                                        VSEC0160
+        DFHMDF POS=(11,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0161
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0162
+F010865 DFHMDF POS=(11,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0163
+               COLOR=GREEN,                                            XVSEC0164
+               HILIGHT=UNDERLINE                                        VSEC0165
+        DFHMDF POS=(11,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0166
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0167
+F010881 DFHMDF POS=(12,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0168
+               COLOR=YELLOW,                                           XVSEC0169
+               HILIGHT=UNDERLINE                                        VSEC0170
+        DFHMDF POS=(12,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0171
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0172
+F010885 DFHMDF POS=(12,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0173
+               COLOR=YELLOW                                             VSEC0174
+        DFHMDF POS=(12,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0175
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0176
+F010919 DFHMDF POS=(12,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0177
+               COLOR=GREEN,                                            XVSEC0178
+               HILIGHT=UNDERLINE                                        VSEC0179
+        DFHMDF POS=(12,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0180
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0181
+F010945 DFHMDF POS=(12,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0182
+               COLOR=GREEN,                                            XVSEC0183
+               HILIGHT=UNDERLINE                                        VSEC0184
+        DFHMDF POS=(12,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0185
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0186
+F010961 DFHMDF POS=(13,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0187
+               COLOR=YELLOW,                                           XVSEC0188
+               HILIGHT=UNDERLINE                                        VSEC0189
+        DFHMDF POS=(13,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0190
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0191
+F010965 DFHMDF POS=(13,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0192
+               COLOR=YELLOW                                             VSEC0193
+        DFHMDF POS=(13,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0194
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0195
+F010999 DFHMDF POS=(13,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0196
+               COLOR=GREEN,                                            XVSEC0197
+               HILIGHT=UNDERLINE                                        VSEC0198
+        DFHMDF POS=(13,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0199
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0200
+F011025 DFHMDF POS=(13,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0201
+               COLOR=GREEN,                                            XVSEC0202
+               HILIGHT=UNDERLINE                                        VSEC0203
+        DFHMDF POS=(13,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0204
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0205
+F011041 DFHMDF POS=(14,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0206
+               COLOR=YELLOW,                                           XVSEC0207
+               HILIGHT=UNDERLINE                                        VSEC0208
+        DFHMDF POS=(14,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0209
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0210
+F011045 DFHMDF POS=(14,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0211
+               COLOR=YELLOW                                             VSEC0212
+        DFHMDF POS=(14,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0213
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0214
+F011079 DFHMDF POS=(14,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0215
+               COLOR=GREEN,                                            XVSEC0216
+               HILIGHT=UNDERLINE                                        VSEC0217
+        DFHMDF POS=(14,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0218
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0219
+F011105 DFHMDF POS=(14,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0220
+               COLOR=GREEN,                                            XVSEC0221
+               HILIGHT=UNDERLINE                                        VSEC0222
+        DFHMDF POS=(14,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0223
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0224
+F011121 DFHMDF POS=(15,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0225
+               COLOR=YELLOW,                                           XVSEC0226
+               HILIGHT=UNDERLINE                                        VSEC0227
+        DFHMDF POS=(15,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0228
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0229
+F011125 DFHMDF POS=(15,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0230
+               COLOR=YELLOW                                             VSEC0231
+        DFHMDF POS=(15,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0232
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0233
+F011159 DFHMDF POS=(15,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0234
+               COLOR=GREEN,                                            XVSEC0235
+               HILIGHT=UNDERLINE                                        VSEC0236
+        DFHMDF POS=(15,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0237
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0238
+F011185 DFHMDF POS=(15,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0239
+               COLOR=GREEN,                                            XVSEC0240
+               HILIGHT=UNDERLINE                                        VSEC0241
+        DFHMDF POS=(15,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0242
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0243
+F011201 DFHMDF POS=(16,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0244
+               COLOR=YELLOW,                                           XVSEC0245
+               HILIGHT=UNDERLINE                                        VSEC0246
+        DFHMDF POS=(16,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0247
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0248
+F011205 DFHMDF POS=(16,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0249
+               COLOR=YELLOW                                             VSEC0250
+        DFHMDF POS=(16,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0251
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0252
+F011239 DFHMDF POS=(16,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0253
+               COLOR=GREEN,                                            XVSEC0254
+               HILIGHT=UNDERLINE                                        VSEC0255
+        DFHMDF POS=(16,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0256
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0257
+F011265 DFHMDF POS=(16,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0258
+               COLOR=GREEN,                                            XVSEC0259
+               HILIGHT=UNDERLINE                                        VSEC0260
+        DFHMDF POS=(16,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0261
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0262
+F011281 DFHMDF POS=(17,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0263
+               COLOR=YELLOW,                                           XVSEC0264
+               HILIGHT=UNDERLINE                                        VSEC0265
+        DFHMDF POS=(17,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0266
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0267
+F011285 DFHMDF POS=(17,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0268
+               COLOR=YELLOW                                             VSEC0269
+        DFHMDF POS=(17,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0270
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0271
+F011319 DFHMDF POS=(17,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0272
+               COLOR=GREEN,                                            XVSEC0273
+               HILIGHT=UNDERLINE                                        VSEC0274
+        DFHMDF POS=(17,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0275
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0276
+F011345 DFHMDF POS=(17,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0277
+               COLOR=GREEN,                                            XVSEC0278
+               HILIGHT=UNDERLINE                                        VSEC0279
+        DFHMDF POS=(17,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0280
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0281
+F011361 DFHMDF POS=(18,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0282
+               COLOR=YELLOW,                                           XVSEC0283
+               HILIGHT=UNDERLINE                                        VSEC0284
+        DFHMDF POS=(18,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0285
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0286
+F011365 DFHMDF POS=(18,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0287
+               COLOR=YELLOW                                             VSEC0288
+        DFHMDF POS=(18,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0289
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0290
+F011399 DFHMDF POS=(18,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0291
+               COLOR=GREEN,                                            XVSEC0292
+               HILIGHT=UNDERLINE                                        VSEC0293
+        DFHMDF POS=(18,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0294
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0295
+F011425 DFHMDF POS=(18,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0296
+               COLOR=GREEN,                                            XVSEC0297
+               HILIGHT=UNDERLINE                                        VSEC0298
+        DFHMDF POS=(18,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0299
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0300
+F011441 DFHMDF POS=(19,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0301
+               COLOR=YELLOW,                                           XVSEC0302
+               HILIGHT=UNDERLINE                                        VSEC0303
+        DFHMDF POS=(19,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0304
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0305
+F011445 DFHMDF POS=(19,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0306
+               COLOR=YELLOW                                             VSEC0307
+        DFHMDF POS=(19,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0308
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0309
+F011479 DFHMDF POS=(19,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0310
+               COLOR=GREEN,                                            XVSEC0311
+               HILIGHT=UNDERLINE                                        VSEC0312
+        DFHMDF POS=(19,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0313
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0314
+F011505 DFHMDF POS=(19,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0315
+               COLOR=GREEN,                                            XVSEC0316
+               HILIGHT=UNDERLINE                                        VSEC0317
+        DFHMDF POS=(19,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0318
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0319
+F011521 DFHMDF POS=(20,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0320
+               COLOR=YELLOW,                                           XVSEC0321
+               HILIGHT=UNDERLINE                                        VSEC0322
+        DFHMDF POS=(20,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0323
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0324
+F011525 DFHMDF POS=(20,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0325
+               COLOR=YELLOW                                             VSEC0326
+        DFHMDF POS=(20,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0327
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0328
+F011559 DFHMDF POS=(20,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0329
+               COLOR=GREEN,                                            XVSEC0330
+               HILIGHT=UNDERLINE                                        VSEC0331
+        DFHMDF POS=(20,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0332
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0333
+F011585 DFHMDF POS=(20,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0334
+               COLOR=GREEN,                                            XVSEC0335
+               HILIGHT=UNDERLINE                                        VSEC0336
+        DFHMDF POS=(20,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0337
+* CBLDNM LABEL=LIST-SELECT                                              VSEC0338
+F011601 DFHMDF POS=(21,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0339
+               COLOR=YELLOW,                                           XVSEC0340
+               HILIGHT=UNDERLINE                                        VSEC0341
+        DFHMDF POS=(21,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0342
+* CBLDNM LABEL=LIST-RSC-IDNT                                            VSEC0343
+F011605 DFHMDF POS=(21,005),LENGTH=031,ATTRB=(UNPROT,NORM,FSET),       XVSEC0344
+               COLOR=YELLOW                                             VSEC0345
+        DFHMDF POS=(21,037),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0346
+* CBLDNM LABEL=LIST-RSC-DESC                                            VSEC0347
+F011639 DFHMDF POS=(21,039),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0348
+               COLOR=GREEN,                                            XVSEC0349
+               HILIGHT=UNDERLINE                                        VSEC0350
+        DFHMDF POS=(21,060),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0351
+* CBLDNM LABEL=LIST-UNV-ACCS                                            VSEC0352
+F011665 DFHMDF POS=(21,065),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0353
+               COLOR=GREEN,                                            XVSEC0354
+               HILIGHT=UNDERLINE                                        VSEC0355
+        DFHMDF POS=(21,067),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0356
+* CBLDNM LABEL=LIST-MESSAGE                                             VSEC0357
+F011681 DFHMDF POS=(22,001),LENGTH=078,ATTRB=(ASKIP,BRT),              XVSEC0358
+               COLOR=RED                                                VSEC0359
+        DFHMDF POS=(23,001),LENGTH=005,ATTRB=(ASKIP,NORM),             XVSEC0360
+               INITIAL='Opts:',                                        XVSEC0361
+               COLOR=TURQUOISE                                          VSEC0362
+        DFHMDF POS=(23,007),LENGTH=001,ATTRB=(ASKIP,BRT),              XVSEC0363
+               INITIAL='P'                                              VSEC0364
+        DFHMDF POS=(23,009),LENGTH=014,ATTRB=(ASKIP,NORM),             XVSEC0365
+               INITIAL='= Permissions,',                               XVSEC0366
+               COLOR=PINK                                               VSEC0367
+        DFHMDF POS=(23,024),LENGTH=001,ATTRB=(ASKIP,BRT),              XVSEC0368
+               INITIAL='A'                                              VSEC0369
+        DFHMDF POS=(23,026),LENGTH=012,ATTRB=(ASKIP,NORM),             XVSEC0370
+               INITIAL='= Add/Alter,',                                 XVSEC0371
+               COLOR=PINK                                               VSEC0372
+        DFHMDF POS=(23,039),LENGTH=001,ATTRB=(ASKIP,BRT),              XVSEC0373
+               INITIAL='D'                                              VSEC0374
+        DFHMDF POS=(23,041),LENGTH=009,ATTRB=(ASKIP,NORM),             XVSEC0375
+               INITIAL='= Delete.',                                    XVSEC0376
+               COLOR=PINK                                               VSEC0377
+        DFHMDF POS=(24,001),LENGTH=005,ATTRB=(ASKIP,NORM),             XVSEC0378
+               INITIAL='Keys:',                                        XVSEC0379
+               COLOR=TURQUOISE                                          VSEC0380
+        DFHMDF POS=(24,007),LENGTH=002,ATTRB=(ASKIP,BRT),              XVSEC0381
+               INITIAL='F1'                                             VSEC0382
+        DFHMDF POS=(24,010),LENGTH=007,ATTRB=(ASKIP,NORM),             XVSEC0383
+               INITIAL='= Help,',                                      XVSEC0384
+               COLOR=PINK                                               VSEC0385
+        DFHMDF POS=(24,018),LENGTH=002,ATTRB=(ASKIP,BRT),              XVSEC0386
+               INITIAL='F3'                                             VSEC0387
+        DFHMDF POS=(24,021),LENGTH=006,ATTRB=(ASKIP,NORM),             XVSEC0388
+               INITIAL='= End,',                                       XVSEC0389
+               COLOR=PINK                                               VSEC0390
+        DFHMDF POS=(24,028),LENGTH=002,ATTRB=(ASKIP,BRT),              XVSEC0391
+               INITIAL='F5'                                             VSEC0392
+        DFHMDF POS=(24,031),LENGTH=016,ATTRB=(ASKIP,NORM),             XVSEC0393
+               INITIAL='= Toggle Screen,',                             XVSEC0394
+               COLOR=PINK                                               VSEC0395
+        DFHMDF POS=(24,048),LENGTH=005,ATTRB=(ASKIP,BRT),              XVSEC0396
+               INITIAL='F6/F7'                                          VSEC0397
+        DFHMDF POS=(24,054),LENGTH=009,ATTRB=(ASKIP,NORM),             XVSEC0398
+               INITIAL='= Top/Up,',                                    XVSEC0399
+               COLOR=PINK                                               VSEC0400
+        DFHMDF POS=(24,064),LENGTH=005,ATTRB=(ASKIP,BRT),              XVSEC0401
+               INITIAL='F8/F9'                                          VSEC0402
+        DFHMDF POS=(24,070),LENGTH=009,ATTRB=(ASKIP,NORM),             XVSEC0403
+               INITIAL='= Dn/Bot.',                                    XVSEC0404
+               COLOR=PINK                                               VSEC0405
+        DFHMDF POS=(24,080),LENGTH=000,ATTRB=(PROT,BRT)                 VSEC0406
+*                                                                       VSEC0407
+        PRINT  ON,GEN                                                   VSEC0408
+        TITLE  'D E T L M A P   ( 0 1 . 4 0 )   -   V I E W   P E R M IXVSEC0409
+                T S   D E T A I L S   M A P                 '           VSEC0410
+DETLMAP DFHMDI SIZE=(24,080)                                            VSEC0411
+*              ROW=07,THRU=07,OCCURS=15                                 VSEC0412
+        PRINT  ON,NOGEN                                                 VSEC0413
+        DFHMDF POS=(01,001),LENGTH=008,ATTRB=(ASKIP,NORM),             XVSEC0414
+               INITIAL='VSEC    ',                                     XVSEC0415
+               COLOR=BLUE                                               VSEC0416
+* CBLDNM LABEL=DETL-COMPANY                                             VSEC0417
+F020020 DFHMDF POS=(01,020),LENGTH=040,ATTRB=(ASKIP,BRT),              XVSEC0418
+               COLOR=TURQUOISE                                          VSEC0419
+* CBLDNM LABEL=DETL-SYSDATE                                             VSEC0420
+F020069 DFHMDF POS=(01,069),LENGTH=010,ATTRB=(ASKIP,NORM),             XVSEC0421
+               INITIAL='mm/dd/yyyy',                                   XVSEC0422
+               COLOR=BLUE                                               VSEC0423
+        DFHMDF POS=(02,001),LENGTH=005,ATTRB=(ASKIP,NORM),             XVSEC0424
+               INITIAL='Term:',                                        XVSEC0425
+               COLOR=BLUE                                               VSEC0426
+* CBLDNM LABEL=DETL-TERMID                                              VSEC0427
+F020087 DFHMDF POS=(02,007),LENGTH=008,ATTRB=(ASKIP,NORM),             XVSEC0428
+               COLOR=BLUE                                               VSEC0429
+* CBLDNM LABEL=DETL-TITLE                                               VSEC0430
+F020100 DFHMDF POS=(02,020),LENGTH=040,ATTRB=(ASKIP,BRT),              XVSEC0431
+               INITIAL='        View Permissions Detail         '       VSEC0432
+* CBLDNM LABEL=DETL-SYSTIME                                             VSEC0433
+F020149 DFHMDF POS=(02,069),LENGTH=010,ATTRB=(ASKIP,NORM),             XVSEC0434
+               INITIAL='hh:mm xx',                                     XVSEC0435
+               COLOR=BLUE                                               VSEC0436
+        DFHMDF POS=(03,001),LENGTH=001,ATTRB=(PROT,BRT),INITIAL=' '     VSEC0437
+        DFHMDF POS=(03,009),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0438
+* CBLDNM LABEL=DETL-SKIP-SAVE                                           VSEC0439
+F020171 DFHMDF POS=(03,011),LENGTH=033,ATTRB=(ASKIP,DRK,FSET)           VSEC0440
+        DFHMDF POS=(03,045),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0441
+        DFHMDF POS=(03,055),LENGTH=005,ATTRB=(ASKIP,NORM),             XVSEC0442
+               INITIAL='Keys:',                                        XVSEC0443
+               COLOR=TURQUOISE                                          VSEC0444
+        DFHMDF POS=(03,061),LENGTH=003,ATTRB=(ASKIP,BRT),              XVSEC0445
+               INITIAL='F10'                                            VSEC0446
+        DFHMDF POS=(03,065),LENGTH=011,ATTRB=(ASKIP,NORM),             XVSEC0447
+               INITIAL='= Add Group',                                  XVSEC0448
+               COLOR=PINK                                               VSEC0449
+        DFHMDF POS=(04,001),LENGTH=009,ATTRB=(ASKIP,NORM),             XVSEC0450
+               INITIAL='Resource:',                                    XVSEC0451
+               COLOR=TURQUOISE                                          VSEC0452
+* CBLDNM LABEL=DETL-RSRC-ID                                             VSEC0453
+F020251 DFHMDF POS=(04,011),LENGTH=039,ATTRB=(ASKIP,NORM),             XVSEC0454
+               COLOR=YELLOW                                             VSEC0455
+        DFHMDF POS=(04,061),LENGTH=003,ATTRB=(ASKIP,BRT),              XVSEC0456
+               INITIAL='F11'                                            VSEC0457
+        DFHMDF POS=(04,065),LENGTH=014,ATTRB=(ASKIP,NORM),             XVSEC0458
+               INITIAL='= Add Resource',                               XVSEC0459
+               COLOR=PINK                                               VSEC0460
+        DFHMDF POS=(05,001),LENGTH=009,ATTRB=(ASKIP,NORM),             XVSEC0461
+               INITIAL=' Skip to:',                                    XVSEC0462
+               COLOR=TURQUOISE                                          VSEC0463
+* CBLDNM LABEL=DETL-SKIP-TO                                             VSEC0464
+F020331 DFHMDF POS=(05,011),LENGTH=033,ATTRB=(UNPROT,NORM,FSET,IC),    XVSEC0465
+               COLOR=YELLOW,                                           XVSEC0466
+               HILIGHT=UNDERLINE                                        VSEC0467
+        DFHMDF POS=(05,045),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0468
+        DFHMDF POS=(05,061),LENGTH=003,ATTRB=(ASKIP,BRT),              XVSEC0469
+               INITIAL='F12'                                            VSEC0470
+        DFHMDF POS=(05,065),LENGTH=010,ATTRB=(ASKIP,NORM),             XVSEC0471
+               INITIAL='= Add User',                                   XVSEC0472
+               COLOR=PINK                                               VSEC0473
+        DFHMDF POS=(06,001),LENGTH=001,ATTRB=(ASKIP,BRT),              XVSEC0474
+               INITIAL='O',                                            XVSEC0475
+               COLOR=TURQUOISE,                                        XVSEC0476
+               HILIGHT=UNDERLINE                                        VSEC0477
+        DFHMDF POS=(06,003),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC0478
+        DFHMDF POS=(06,004),LENGTH=003,ATTRB=(ASKIP,BRT),              XVSEC0479
+               INITIAL='Typ',                                          XVSEC0480
+               COLOR=TURQUOISE,                                        XVSEC0481
+               HILIGHT=UNDERLINE                                        VSEC0482
+        DFHMDF POS=(06,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC0483
+               INITIAL='          Permissions Detail           ',      XVSEC0484
+               COLOR=TURQUOISE,                                        XVSEC0485
+               HILIGHT=UNDERLINE                                        VSEC0486
+        DFHMDF POS=(06,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0487
+        DFHMDF POS=(06,050),LENGTH=020,ATTRB=(ASKIP,BRT),              XVSEC0488
+               INITIAL='    Description     ',                         XVSEC0489
+               COLOR=TURQUOISE,                                        XVSEC0490
+               HILIGHT=UNDERLINE                                        VSEC0491
+        DFHMDF POS=(06,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0492
+        DFHMDF POS=(06,073),LENGTH=006,ATTRB=(ASKIP,NORM),             XVSEC0493
+               INITIAL='Access',                                       XVSEC0494
+               COLOR=TURQUOISE,                                        XVSEC0495
+               HILIGHT=UNDERLINE                                        VSEC0496
+        DFHMDF POS=(06,080),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC0497
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0498
+F020481 DFHMDF POS=(07,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0499
+               COLOR=YELLOW,                                           XVSEC0500
+               HILIGHT=UNDERLINE                                        VSEC0501
+        DFHMDF POS=(07,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0502
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0503
+F020485 DFHMDF POS=(07,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0504
+               COLOR=BLUE                                               VSEC0505
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0506
+F020488 DFHMDF POS=(07,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0507
+               COLOR=YELLOW                                             VSEC0508
+        DFHMDF POS=(07,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0509
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0510
+F020530 DFHMDF POS=(07,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0511
+               COLOR=GREEN,                                            XVSEC0512
+               HILIGHT=UNDERLINE                                        VSEC0513
+        DFHMDF POS=(07,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0514
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0515
+F020555 DFHMDF POS=(07,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0516
+               COLOR=GREEN                                              VSEC0517
+        DFHMDF POS=(07,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0518
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0519
+F020561 DFHMDF POS=(08,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0520
+               COLOR=YELLOW,                                           XVSEC0521
+               HILIGHT=UNDERLINE                                        VSEC0522
+        DFHMDF POS=(08,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0523
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0524
+F020565 DFHMDF POS=(08,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0525
+               COLOR=BLUE                                               VSEC0526
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0527
+F020568 DFHMDF POS=(08,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0528
+               COLOR=YELLOW                                             VSEC0529
+        DFHMDF POS=(08,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0530
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0531
+F020610 DFHMDF POS=(08,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0532
+               COLOR=GREEN,                                            XVSEC0533
+               HILIGHT=UNDERLINE                                        VSEC0534
+        DFHMDF POS=(08,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0535
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0536
+F020635 DFHMDF POS=(08,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0537
+               COLOR=GREEN                                              VSEC0538
+        DFHMDF POS=(08,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0539
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0540
+F020641 DFHMDF POS=(09,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0541
+               COLOR=YELLOW,                                           XVSEC0542
+               HILIGHT=UNDERLINE                                        VSEC0543
+        DFHMDF POS=(09,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0544
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0545
+F020645 DFHMDF POS=(09,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0546
+               COLOR=BLUE                                               VSEC0547
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0548
+F020648 DFHMDF POS=(09,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0549
+               COLOR=YELLOW                                             VSEC0550
+        DFHMDF POS=(09,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0551
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0552
+F020690 DFHMDF POS=(09,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0553
+               COLOR=GREEN,                                            XVSEC0554
+               HILIGHT=UNDERLINE                                        VSEC0555
+        DFHMDF POS=(09,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0556
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0557
+F020715 DFHMDF POS=(09,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0558
+               COLOR=GREEN                                              VSEC0559
+        DFHMDF POS=(09,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0560
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0561
+F020721 DFHMDF POS=(10,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0562
+               COLOR=YELLOW,                                           XVSEC0563
+               HILIGHT=UNDERLINE                                        VSEC0564
+        DFHMDF POS=(10,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0565
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0566
+F020725 DFHMDF POS=(10,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0567
+               COLOR=BLUE                                               VSEC0568
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0569
+F020728 DFHMDF POS=(10,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0570
+               COLOR=YELLOW                                             VSEC0571
+        DFHMDF POS=(10,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0572
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0573
+F020770 DFHMDF POS=(10,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0574
+               COLOR=GREEN,                                            XVSEC0575
+               HILIGHT=UNDERLINE                                        VSEC0576
+        DFHMDF POS=(10,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0577
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0578
+F020795 DFHMDF POS=(10,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0579
+               COLOR=GREEN                                              VSEC0580
+        DFHMDF POS=(10,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0581
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0582
+F020801 DFHMDF POS=(11,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0583
+               COLOR=YELLOW,                                           XVSEC0584
+               HILIGHT=UNDERLINE                                        VSEC0585
+        DFHMDF POS=(11,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0586
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0587
+F020805 DFHMDF POS=(11,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0588
+               COLOR=BLUE                                               VSEC0589
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0590
+F020808 DFHMDF POS=(11,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0591
+               COLOR=YELLOW                                             VSEC0592
+        DFHMDF POS=(11,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0593
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0594
+F020850 DFHMDF POS=(11,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0595
+               COLOR=GREEN,                                            XVSEC0596
+               HILIGHT=UNDERLINE                                        VSEC0597
+        DFHMDF POS=(11,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0598
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0599
+F020875 DFHMDF POS=(11,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0600
+               COLOR=GREEN                                              VSEC0601
+        DFHMDF POS=(11,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0602
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0603
+F020881 DFHMDF POS=(12,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0604
+               COLOR=YELLOW,                                           XVSEC0605
+               HILIGHT=UNDERLINE                                        VSEC0606
+        DFHMDF POS=(12,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0607
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0608
+F020885 DFHMDF POS=(12,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0609
+               COLOR=BLUE                                               VSEC0610
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0611
+F020888 DFHMDF POS=(12,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0612
+               COLOR=YELLOW                                             VSEC0613
+        DFHMDF POS=(12,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0614
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0615
+F020930 DFHMDF POS=(12,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0616
+               COLOR=GREEN,                                            XVSEC0617
+               HILIGHT=UNDERLINE                                        VSEC0618
+        DFHMDF POS=(12,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0619
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0620
+F020955 DFHMDF POS=(12,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0621
+               COLOR=GREEN                                              VSEC0622
+        DFHMDF POS=(12,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0623
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0624
+F020961 DFHMDF POS=(13,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0625
+               COLOR=YELLOW,                                           XVSEC0626
+               HILIGHT=UNDERLINE                                        VSEC0627
+        DFHMDF POS=(13,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0628
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0629
+F020965 DFHMDF POS=(13,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0630
+               COLOR=BLUE                                               VSEC0631
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0632
+F020968 DFHMDF POS=(13,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0633
+               COLOR=YELLOW                                             VSEC0634
+        DFHMDF POS=(13,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0635
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0636
+F021010 DFHMDF POS=(13,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0637
+               COLOR=GREEN,                                            XVSEC0638
+               HILIGHT=UNDERLINE                                        VSEC0639
+        DFHMDF POS=(13,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0640
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0641
+F021035 DFHMDF POS=(13,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0642
+               COLOR=GREEN                                              VSEC0643
+        DFHMDF POS=(13,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0644
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0645
+F021041 DFHMDF POS=(14,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0646
+               COLOR=YELLOW,                                           XVSEC0647
+               HILIGHT=UNDERLINE                                        VSEC0648
+        DFHMDF POS=(14,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0649
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0650
+F021045 DFHMDF POS=(14,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0651
+               COLOR=BLUE                                               VSEC0652
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0653
+F021048 DFHMDF POS=(14,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0654
+               COLOR=YELLOW                                             VSEC0655
+        DFHMDF POS=(14,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0656
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0657
+F021090 DFHMDF POS=(14,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0658
+               COLOR=GREEN,                                            XVSEC0659
+               HILIGHT=UNDERLINE                                        VSEC0660
+        DFHMDF POS=(14,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0661
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0662
+F021115 DFHMDF POS=(14,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0663
+               COLOR=GREEN                                              VSEC0664
+        DFHMDF POS=(14,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0665
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0666
+F021121 DFHMDF POS=(15,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0667
+               COLOR=YELLOW,                                           XVSEC0668
+               HILIGHT=UNDERLINE                                        VSEC0669
+        DFHMDF POS=(15,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0670
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0671
+F021125 DFHMDF POS=(15,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0672
+               COLOR=BLUE                                               VSEC0673
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0674
+F021128 DFHMDF POS=(15,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0675
+               COLOR=YELLOW                                             VSEC0676
+        DFHMDF POS=(15,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0677
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0678
+F021170 DFHMDF POS=(15,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0679
+               COLOR=GREEN,                                            XVSEC0680
+               HILIGHT=UNDERLINE                                        VSEC0681
+        DFHMDF POS=(15,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0682
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0683
+F021195 DFHMDF POS=(15,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0684
+               COLOR=GREEN                                              VSEC0685
+        DFHMDF POS=(15,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0686
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0687
+F021201 DFHMDF POS=(16,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0688
+               COLOR=YELLOW,                                           XVSEC0689
+               HILIGHT=UNDERLINE                                        VSEC0690
+        DFHMDF POS=(16,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0691
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0692
+F021205 DFHMDF POS=(16,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0693
+               COLOR=BLUE                                               VSEC0694
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0695
+F021208 DFHMDF POS=(16,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0696
+               COLOR=YELLOW                                             VSEC0697
+        DFHMDF POS=(16,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0698
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0699
+F021250 DFHMDF POS=(16,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0700
+               COLOR=GREEN,                                            XVSEC0701
+               HILIGHT=UNDERLINE                                        VSEC0702
+        DFHMDF POS=(16,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0703
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0704
+F021275 DFHMDF POS=(16,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0705
+               COLOR=GREEN                                              VSEC0706
+        DFHMDF POS=(16,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0707
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0708
+F021281 DFHMDF POS=(17,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0709
+               COLOR=YELLOW,                                           XVSEC0710
+               HILIGHT=UNDERLINE                                        VSEC0711
+        DFHMDF POS=(17,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0712
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0713
+F021285 DFHMDF POS=(17,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0714
+               COLOR=BLUE                                               VSEC0715
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0716
+F021288 DFHMDF POS=(17,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0717
+               COLOR=YELLOW                                             VSEC0718
+        DFHMDF POS=(17,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0719
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0720
+F021330 DFHMDF POS=(17,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0721
+               COLOR=GREEN,                                            XVSEC0722
+               HILIGHT=UNDERLINE                                        VSEC0723
+        DFHMDF POS=(17,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0724
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0725
+F021355 DFHMDF POS=(17,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0726
+               COLOR=GREEN                                              VSEC0727
+        DFHMDF POS=(17,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0728
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0729
+F021361 DFHMDF POS=(18,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0730
+               COLOR=YELLOW,                                           XVSEC0731
+               HILIGHT=UNDERLINE                                        VSEC0732
+        DFHMDF POS=(18,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0733
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0734
+F021365 DFHMDF POS=(18,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0735
+               COLOR=BLUE                                               VSEC0736
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0737
+F021368 DFHMDF POS=(18,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0738
+               COLOR=YELLOW                                             VSEC0739
+        DFHMDF POS=(18,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0740
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0741
+F021410 DFHMDF POS=(18,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0742
+               COLOR=GREEN,                                            XVSEC0743
+               HILIGHT=UNDERLINE                                        VSEC0744
+        DFHMDF POS=(18,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0745
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0746
+F021435 DFHMDF POS=(18,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0747
+               COLOR=GREEN                                              VSEC0748
+        DFHMDF POS=(18,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0749
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0750
+F021441 DFHMDF POS=(19,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0751
+               COLOR=YELLOW,                                           XVSEC0752
+               HILIGHT=UNDERLINE                                        VSEC0753
+        DFHMDF POS=(19,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0754
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0755
+F021445 DFHMDF POS=(19,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0756
+               COLOR=BLUE                                               VSEC0757
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0758
+F021448 DFHMDF POS=(19,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0759
+               COLOR=YELLOW                                             VSEC0760
+        DFHMDF POS=(19,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0761
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0762
+F021490 DFHMDF POS=(19,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0763
+               COLOR=GREEN,                                            XVSEC0764
+               HILIGHT=UNDERLINE                                        VSEC0765
+        DFHMDF POS=(19,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0766
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0767
+F021515 DFHMDF POS=(19,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0768
+               COLOR=GREEN                                              VSEC0769
+        DFHMDF POS=(19,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0770
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0771
+F021521 DFHMDF POS=(20,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0772
+               COLOR=YELLOW,                                           XVSEC0773
+               HILIGHT=UNDERLINE                                        VSEC0774
+        DFHMDF POS=(20,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0775
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0776
+F021525 DFHMDF POS=(20,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0777
+               COLOR=BLUE                                               VSEC0778
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0779
+F021528 DFHMDF POS=(20,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0780
+               COLOR=YELLOW                                             VSEC0781
+        DFHMDF POS=(20,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0782
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0783
+F021570 DFHMDF POS=(20,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0784
+               COLOR=GREEN,                                            XVSEC0785
+               HILIGHT=UNDERLINE                                        VSEC0786
+        DFHMDF POS=(20,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0787
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0788
+F021595 DFHMDF POS=(20,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0789
+               COLOR=GREEN                                              VSEC0790
+        DFHMDF POS=(20,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0791
+* CBLDNM LABEL=DETL-SELECT                                              VSEC0792
+F021601 DFHMDF POS=(21,001),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0793
+               COLOR=YELLOW,                                           XVSEC0794
+               HILIGHT=UNDERLINE                                        VSEC0795
+        DFHMDF POS=(21,003),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0796
+* CBLDNM LABEL=DETL-RSC-TYPE                                            VSEC0797
+F021605 DFHMDF POS=(21,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0798
+               COLOR=BLUE                                               VSEC0799
+* CBLDNM LABEL=DETL-RSC-IDNT                                            VSEC0800
+F021608 DFHMDF POS=(21,008),LENGTH=039,ATTRB=(UNPROT,NORM),            XVSEC0801
+               COLOR=YELLOW                                             VSEC0802
+        DFHMDF POS=(21,048),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0803
+* CBLDNM LABEL=DETL-RSC-DESC                                            VSEC0804
+F021650 DFHMDF POS=(21,050),LENGTH=020,ATTRB=(UNPROT,NORM),            XVSEC0805
+               COLOR=GREEN,                                            XVSEC0806
+               HILIGHT=UNDERLINE                                        VSEC0807
+        DFHMDF POS=(21,071),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0808
+* CBLDNM LABEL=DETL-RSC-ACCS                                            VSEC0809
+F021675 DFHMDF POS=(21,075),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC0810
+               COLOR=GREEN                                              VSEC0811
+        DFHMDF POS=(21,077),LENGTH=001,ATTRB=(ASKIP,BRT),INITIAL=' '    VSEC0812
+* CBLDNM LABEL=DETL-MESSAGE                                             VSEC0813
+F021681 DFHMDF POS=(22,001),LENGTH=078,ATTRB=(ASKIP,BRT),              XVSEC0814
+               COLOR=RED                                                VSEC0815
+        DFHMDF POS=(23,001),LENGTH=005,ATTRB=(ASKIP,NORM),             XVSEC0816
+               INITIAL='Opts:',                                        XVSEC0817
+               COLOR=TURQUOISE                                          VSEC0818
+        DFHMDF POS=(23,007),LENGTH=001,ATTRB=(ASKIP,BRT),              XVSEC0819
+               INITIAL='P'                                              VSEC0820
+        DFHMDF POS=(23,009),LENGTH=014,ATTRB=(ASKIP,NORM),             XVSEC0821
+               INITIAL='= Permissions,',                               XVSEC0822
+               COLOR=PINK                                               VSEC0823
+        DFHMDF POS=(23,024),LENGTH=001,ATTRB=(ASKIP,BRT),              XVSEC0824
+               INITIAL='A'                                              VSEC0825
+        DFHMDF POS=(23,026),LENGTH=012,ATTRB=(ASKIP,NORM),             XVSEC0826
+               INITIAL='= Add/Alter,',                                 XVSEC0827
+               COLOR=PINK                                               VSEC0828
+        DFHMDF POS=(23,039),LENGTH=001,ATTRB=(ASKIP,BRT),              XVSEC0829
+               INITIAL='D'                                              VSEC0830
+        DFHMDF POS=(23,041),LENGTH=009,ATTRB=(ASKIP,NORM),             XVSEC0831
+               INITIAL='= Delete.',                                    XVSEC0832
+               COLOR=PINK                                               VSEC0833
+        DFHMDF POS=(24,001),LENGTH=005,ATTRB=(ASKIP,NORM),             XVSEC0834
+               INITIAL='Keys:',                                        XVSEC0835
+               COLOR=TURQUOISE                                          VSEC0836
+        DFHMDF POS=(24,007),LENGTH=002,ATTRB=(ASKIP,BRT),              XVSEC0837
+               INITIAL='F1'                                             VSEC0838
+        DFHMDF POS=(24,010),LENGTH=007,ATTRB=(ASKIP,NORM),             XVSEC0839
+               INITIAL='= Help,',                                      XVSEC0840
+               COLOR=PINK                                               VSEC0841
+        DFHMDF POS=(24,018),LENGTH=002,ATTRB=(ASKIP,BRT),              XVSEC0842
+               INITIAL='F3'                                             VSEC0843
+        DFHMDF POS=(24,021),LENGTH=011,ATTRB=(ASKIP,NORM),             XVSEC0844
+               INITIAL='= Previous,',                                  XVSEC0845
+               COLOR=PINK                                               VSEC0846
+        DFHMDF POS=(24,033),LENGTH=002,ATTRB=(ASKIP,BRT),              XVSEC0847
+               INITIAL='F4'                                             VSEC0848
+        DFHMDF POS=(24,036),LENGTH=009,ATTRB=(ASKIP,NORM),             XVSEC0849
+               INITIAL='= Return,',                                    XVSEC0850
+               COLOR=PINK                                               VSEC0851
+        DFHMDF POS=(24,048),LENGTH=005,ATTRB=(ASKIP,BRT),              XVSEC0852
+               INITIAL='F6/F7'                                          VSEC0853
+        DFHMDF POS=(24,054),LENGTH=009,ATTRB=(ASKIP,NORM),             XVSEC0854
+               INITIAL='= Top/Up,',                                    XVSEC0855
+               COLOR=PINK                                               VSEC0856
+        DFHMDF POS=(24,064),LENGTH=005,ATTRB=(ASKIP,BRT),              XVSEC0857
+               INITIAL='F8/F9'                                          VSEC0858
+        DFHMDF POS=(24,070),LENGTH=009,ATTRB=(ASKIP,NORM),             XVSEC0859
+               INITIAL='= Dn/Bot.',                                    XVSEC0860
+               COLOR=PINK                                               VSEC0861
+        DFHMDF POS=(24,080),LENGTH=000,ATTRB=(PROT,BRT)                 VSEC0862
+*                                                                       VSEC0863
+        PRINT  ON,GEN                                                   VSEC0864
+        TITLE  'D E T L X X X   ( 0 1 . 1 2 )   -   P R O T E C T   P EXVSEC0865
+                R M I T S   D E T A I L S   M A P           '           VSEC0866
+DETLXXX DFHMDI SIZE=(24,080)                                            VSEC0867
+        PRINT  ON,NOGEN                                                 VSEC0868
+        DFHMDF POS=(05,011),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0869
+               COLOR=YELLOW                                             VSEC0870
+        DFHMDF POS=(07,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0871
+               COLOR=YELLOW                                             VSEC0872
+        DFHMDF POS=(07,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0873
+               COLOR=YELLOW                                             VSEC0874
+        DFHMDF POS=(07,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0875
+               COLOR=GREEN                                              VSEC0876
+        DFHMDF POS=(07,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0877
+               COLOR=GREEN                                              VSEC0878
+        DFHMDF POS=(08,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0879
+               COLOR=YELLOW                                             VSEC0880
+        DFHMDF POS=(08,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0881
+               COLOR=YELLOW                                             VSEC0882
+        DFHMDF POS=(08,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0883
+               COLOR=GREEN                                              VSEC0884
+        DFHMDF POS=(08,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0885
+               COLOR=GREEN                                              VSEC0886
+        DFHMDF POS=(09,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0887
+               COLOR=YELLOW                                             VSEC0888
+        DFHMDF POS=(09,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0889
+               COLOR=YELLOW                                             VSEC0890
+        DFHMDF POS=(09,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0891
+               COLOR=GREEN                                              VSEC0892
+        DFHMDF POS=(09,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0893
+               COLOR=GREEN                                              VSEC0894
+        DFHMDF POS=(10,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0895
+               COLOR=YELLOW                                             VSEC0896
+        DFHMDF POS=(10,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0897
+               COLOR=YELLOW                                             VSEC0898
+        DFHMDF POS=(10,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0899
+               COLOR=GREEN                                              VSEC0900
+        DFHMDF POS=(10,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0901
+               COLOR=GREEN                                              VSEC0902
+        DFHMDF POS=(11,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0903
+               COLOR=YELLOW                                             VSEC0904
+        DFHMDF POS=(11,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0905
+               COLOR=YELLOW                                             VSEC0906
+        DFHMDF POS=(11,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0907
+               COLOR=GREEN                                              VSEC0908
+        DFHMDF POS=(11,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0909
+               COLOR=GREEN                                              VSEC0910
+        DFHMDF POS=(12,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0911
+               COLOR=YELLOW                                             VSEC0912
+        DFHMDF POS=(12,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0913
+               COLOR=YELLOW                                             VSEC0914
+        DFHMDF POS=(12,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0915
+               COLOR=GREEN                                              VSEC0916
+        DFHMDF POS=(12,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0917
+               COLOR=GREEN                                              VSEC0918
+        DFHMDF POS=(13,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0919
+               COLOR=YELLOW                                             VSEC0920
+        DFHMDF POS=(13,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0921
+               COLOR=YELLOW                                             VSEC0922
+        DFHMDF POS=(13,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0923
+               COLOR=GREEN                                              VSEC0924
+        DFHMDF POS=(13,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0925
+               COLOR=GREEN                                              VSEC0926
+        DFHMDF POS=(14,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0927
+               COLOR=YELLOW                                             VSEC0928
+        DFHMDF POS=(14,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0929
+               COLOR=YELLOW                                             VSEC0930
+        DFHMDF POS=(14,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0931
+               COLOR=GREEN                                              VSEC0932
+        DFHMDF POS=(14,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0933
+               COLOR=GREEN                                              VSEC0934
+        DFHMDF POS=(15,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0935
+               COLOR=YELLOW                                             VSEC0936
+        DFHMDF POS=(15,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0937
+               COLOR=YELLOW                                             VSEC0938
+        DFHMDF POS=(15,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0939
+               COLOR=GREEN                                              VSEC0940
+        DFHMDF POS=(15,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0941
+               COLOR=GREEN                                              VSEC0942
+        DFHMDF POS=(16,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0943
+               COLOR=YELLOW                                             VSEC0944
+        DFHMDF POS=(16,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0945
+               COLOR=YELLOW                                             VSEC0946
+        DFHMDF POS=(16,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0947
+               COLOR=GREEN                                              VSEC0948
+        DFHMDF POS=(16,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0949
+               COLOR=GREEN                                              VSEC0950
+        DFHMDF POS=(17,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0951
+               COLOR=YELLOW                                             VSEC0952
+        DFHMDF POS=(17,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0953
+               COLOR=YELLOW                                             VSEC0954
+        DFHMDF POS=(17,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0955
+               COLOR=GREEN                                              VSEC0956
+        DFHMDF POS=(17,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0957
+               COLOR=GREEN                                              VSEC0958
+        DFHMDF POS=(18,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0959
+               COLOR=YELLOW                                             VSEC0960
+        DFHMDF POS=(18,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0961
+               COLOR=YELLOW                                             VSEC0962
+        DFHMDF POS=(18,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0963
+               COLOR=GREEN                                              VSEC0964
+        DFHMDF POS=(18,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0965
+               COLOR=GREEN                                              VSEC0966
+        DFHMDF POS=(19,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0967
+               COLOR=YELLOW                                             VSEC0968
+        DFHMDF POS=(19,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0969
+               COLOR=YELLOW                                             VSEC0970
+        DFHMDF POS=(19,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0971
+               COLOR=GREEN                                              VSEC0972
+        DFHMDF POS=(19,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0973
+               COLOR=GREEN                                              VSEC0974
+        DFHMDF POS=(20,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0975
+               COLOR=YELLOW                                             VSEC0976
+        DFHMDF POS=(20,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0977
+               COLOR=YELLOW                                             VSEC0978
+        DFHMDF POS=(20,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0979
+               COLOR=GREEN                                              VSEC0980
+        DFHMDF POS=(20,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0981
+               COLOR=GREEN                                              VSEC0982
+        DFHMDF POS=(21,001),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0983
+               COLOR=YELLOW                                             VSEC0984
+        DFHMDF POS=(21,005),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0985
+               COLOR=YELLOW                                             VSEC0986
+        DFHMDF POS=(21,047),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0987
+               COLOR=GREEN                                              VSEC0988
+        DFHMDF POS=(21,073),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC0989
+               COLOR=GREEN                                              VSEC0990
+*                                                                       VSEC0991
+        PRINT  ON,GEN                                                   VSEC0992
+        TITLE  'A D D P M A P   ( 0 1 . 2 4 )   -   A D D   P E R M I SXVSEC0993
+                S I O N S   M A P                           '           VSEC0994
+ADDPMAP DFHMDI SIZE=(24,080)                                            VSEC0995
+*              ROW=08,THRU=08,OCCURS=14                                 VSEC0996
+        PRINT  ON,NOGEN                                                 VSEC0997
+* CBLDNM LABEL=ADDP-TITLE                                               VSEC0998
+F040403 DFHMDF POS=(06,003),LENGTH=072,ATTRB=(ASKIP,NORM),             XVSEC0999
+               XINIT=4040,                                             XVSEC1000
+               COLOR=TURQUOISE,                                        XVSEC1001
+               HILIGHT=REVERSE                                          VSEC1002
+        DFHMDF POS=(06,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1003
+        DFHMDF POS=(07,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1004
+               XINIT=4040,                                             XVSEC1005
+               COLOR=TURQUOISE,                                        XVSEC1006
+               HILIGHT=REVERSE                                          VSEC1007
+        DFHMDF POS=(07,006),LENGTH=005,ATTRB=(ASKIP,NORM),             XVSEC1008
+               INITIAL='Skip:',                                        XVSEC1009
+               COLOR=TURQUOISE                                          VSEC1010
+* CBLDNM LABEL=ADDP-SKIP-TO                                             VSEC1011
+F040492 DFHMDF POS=(07,012),LENGTH=035,ATTRB=(UNPROT,NORM,IC),         XVSEC1012
+               COLOR=YELLOW,                                           XVSEC1013
+               HILIGHT=UNDERLINE                                        VSEC1014
+        DFHMDF POS=(07,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1015
+               INITIAL='    Description     ',                         XVSEC1016
+               COLOR=TURQUOISE,                                        XVSEC1017
+               HILIGHT=UNDERLINE                                        VSEC1018
+        DFHMDF POS=(07,069),LENGTH=003,ATTRB=(ASKIP,NORM),             XVSEC1019
+               INITIAL='Acc',                                          XVSEC1020
+               COLOR=TURQUOISE,                                        XVSEC1021
+               HILIGHT=UNDERLINE                                        VSEC1022
+        DFHMDF POS=(07,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1023
+               XINIT=4040,                                             XVSEC1024
+               COLOR=TURQUOISE,                                        XVSEC1025
+               HILIGHT=REVERSE                                          VSEC1026
+        DFHMDF POS=(07,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1027
+        DFHMDF POS=(08,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1028
+               XINIT=4040,                                             XVSEC1029
+               COLOR=TURQUOISE,                                        XVSEC1030
+               HILIGHT=REVERSE                                          VSEC1031
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1032
+F040566 DFHMDF POS=(08,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1033
+               COLOR=YELLOW,                                           XVSEC1034
+               HILIGHT=UNDERLINE                                        VSEC1035
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1036
+F040568 DFHMDF POS=(08,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1037
+               COLOR=YELLOW,                                           XVSEC1038
+               HILIGHT=OFF                                              VSEC1039
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1040
+F040608 DFHMDF POS=(08,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1041
+               COLOR=GREEN,                                            XVSEC1042
+               HILIGHT=OFF                                              VSEC1043
+        DFHMDF POS=(08,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1044
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1045
+F040630 DFHMDF POS=(08,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1046
+               COLOR=GREEN                                              VSEC1047
+        DFHMDF POS=(08,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1048
+        DFHMDF POS=(08,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1049
+               XINIT=4040,                                             XVSEC1050
+               COLOR=TURQUOISE,                                        XVSEC1051
+               HILIGHT=REVERSE                                          VSEC1052
+        DFHMDF POS=(08,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1053
+        DFHMDF POS=(09,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1054
+               XINIT=4040,                                             XVSEC1055
+               COLOR=TURQUOISE,                                        XVSEC1056
+               HILIGHT=REVERSE                                          VSEC1057
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1058
+F040646 DFHMDF POS=(09,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1059
+               COLOR=YELLOW,                                           XVSEC1060
+               HILIGHT=UNDERLINE                                        VSEC1061
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1062
+F040648 DFHMDF POS=(09,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1063
+               COLOR=YELLOW,                                           XVSEC1064
+               HILIGHT=OFF                                              VSEC1065
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1066
+F040688 DFHMDF POS=(09,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1067
+               COLOR=GREEN,                                            XVSEC1068
+               HILIGHT=OFF                                              VSEC1069
+        DFHMDF POS=(09,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1070
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1071
+F040710 DFHMDF POS=(09,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1072
+               COLOR=GREEN                                              VSEC1073
+        DFHMDF POS=(09,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1074
+        DFHMDF POS=(09,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1075
+               XINIT=4040,                                             XVSEC1076
+               COLOR=TURQUOISE,                                        XVSEC1077
+               HILIGHT=REVERSE                                          VSEC1078
+        DFHMDF POS=(09,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1079
+        DFHMDF POS=(10,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1080
+               XINIT=4040,                                             XVSEC1081
+               COLOR=TURQUOISE,                                        XVSEC1082
+               HILIGHT=REVERSE                                          VSEC1083
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1084
+F040726 DFHMDF POS=(10,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1085
+               COLOR=YELLOW,                                           XVSEC1086
+               HILIGHT=UNDERLINE                                        VSEC1087
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1088
+F040728 DFHMDF POS=(10,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1089
+               COLOR=YELLOW,                                           XVSEC1090
+               HILIGHT=OFF                                              VSEC1091
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1092
+F040768 DFHMDF POS=(10,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1093
+               COLOR=GREEN,                                            XVSEC1094
+               HILIGHT=OFF                                              VSEC1095
+        DFHMDF POS=(10,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1096
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1097
+F040790 DFHMDF POS=(10,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1098
+               COLOR=GREEN                                              VSEC1099
+        DFHMDF POS=(10,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1100
+        DFHMDF POS=(10,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1101
+               XINIT=4040,                                             XVSEC1102
+               COLOR=TURQUOISE,                                        XVSEC1103
+               HILIGHT=REVERSE                                          VSEC1104
+        DFHMDF POS=(10,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1105
+        DFHMDF POS=(11,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1106
+               XINIT=4040,                                             XVSEC1107
+               COLOR=TURQUOISE,                                        XVSEC1108
+               HILIGHT=REVERSE                                          VSEC1109
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1110
+F040806 DFHMDF POS=(11,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1111
+               COLOR=YELLOW,                                           XVSEC1112
+               HILIGHT=UNDERLINE                                        VSEC1113
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1114
+F040808 DFHMDF POS=(11,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1115
+               COLOR=YELLOW,                                           XVSEC1116
+               HILIGHT=OFF                                              VSEC1117
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1118
+F040848 DFHMDF POS=(11,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1119
+               COLOR=GREEN,                                            XVSEC1120
+               HILIGHT=OFF                                              VSEC1121
+        DFHMDF POS=(11,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1122
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1123
+F040870 DFHMDF POS=(11,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1124
+               COLOR=GREEN                                              VSEC1125
+        DFHMDF POS=(11,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1126
+        DFHMDF POS=(11,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1127
+               XINIT=4040,                                             XVSEC1128
+               COLOR=TURQUOISE,                                        XVSEC1129
+               HILIGHT=REVERSE                                          VSEC1130
+        DFHMDF POS=(11,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1131
+        DFHMDF POS=(12,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1132
+               XINIT=4040,                                             XVSEC1133
+               COLOR=TURQUOISE,                                        XVSEC1134
+               HILIGHT=REVERSE                                          VSEC1135
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1136
+F040886 DFHMDF POS=(12,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1137
+               COLOR=YELLOW,                                           XVSEC1138
+               HILIGHT=UNDERLINE                                        VSEC1139
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1140
+F040888 DFHMDF POS=(12,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1141
+               COLOR=YELLOW,                                           XVSEC1142
+               HILIGHT=OFF                                              VSEC1143
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1144
+F040928 DFHMDF POS=(12,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1145
+               COLOR=GREEN,                                            XVSEC1146
+               HILIGHT=OFF                                              VSEC1147
+        DFHMDF POS=(12,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1148
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1149
+F040950 DFHMDF POS=(12,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1150
+               COLOR=GREEN                                              VSEC1151
+        DFHMDF POS=(12,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1152
+        DFHMDF POS=(12,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1153
+               XINIT=4040,                                             XVSEC1154
+               COLOR=TURQUOISE,                                        XVSEC1155
+               HILIGHT=REVERSE                                          VSEC1156
+        DFHMDF POS=(12,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1157
+        DFHMDF POS=(13,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1158
+               XINIT=4040,                                             XVSEC1159
+               COLOR=TURQUOISE,                                        XVSEC1160
+               HILIGHT=REVERSE                                          VSEC1161
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1162
+F040966 DFHMDF POS=(13,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1163
+               COLOR=YELLOW,                                           XVSEC1164
+               HILIGHT=UNDERLINE                                        VSEC1165
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1166
+F040968 DFHMDF POS=(13,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1167
+               COLOR=YELLOW,                                           XVSEC1168
+               HILIGHT=OFF                                              VSEC1169
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1170
+F041008 DFHMDF POS=(13,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1171
+               COLOR=GREEN,                                            XVSEC1172
+               HILIGHT=OFF                                              VSEC1173
+        DFHMDF POS=(13,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1174
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1175
+F041030 DFHMDF POS=(13,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1176
+               COLOR=GREEN                                              VSEC1177
+        DFHMDF POS=(13,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1178
+        DFHMDF POS=(13,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1179
+               XINIT=4040,                                             XVSEC1180
+               COLOR=TURQUOISE,                                        XVSEC1181
+               HILIGHT=REVERSE                                          VSEC1182
+        DFHMDF POS=(13,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1183
+        DFHMDF POS=(14,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1184
+               XINIT=4040,                                             XVSEC1185
+               COLOR=TURQUOISE,                                        XVSEC1186
+               HILIGHT=REVERSE                                          VSEC1187
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1188
+F041046 DFHMDF POS=(14,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1189
+               COLOR=YELLOW,                                           XVSEC1190
+               HILIGHT=UNDERLINE                                        VSEC1191
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1192
+F041048 DFHMDF POS=(14,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1193
+               COLOR=YELLOW,                                           XVSEC1194
+               HILIGHT=OFF                                              VSEC1195
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1196
+F041088 DFHMDF POS=(14,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1197
+               COLOR=GREEN,                                            XVSEC1198
+               HILIGHT=OFF                                              VSEC1199
+        DFHMDF POS=(14,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1200
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1201
+F041110 DFHMDF POS=(14,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1202
+               COLOR=GREEN                                              VSEC1203
+        DFHMDF POS=(14,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1204
+        DFHMDF POS=(14,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1205
+               XINIT=4040,                                             XVSEC1206
+               COLOR=TURQUOISE,                                        XVSEC1207
+               HILIGHT=REVERSE                                          VSEC1208
+        DFHMDF POS=(14,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1209
+        DFHMDF POS=(15,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1210
+               XINIT=4040,                                             XVSEC1211
+               COLOR=TURQUOISE,                                        XVSEC1212
+               HILIGHT=REVERSE                                          VSEC1213
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1214
+F041126 DFHMDF POS=(15,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1215
+               COLOR=YELLOW,                                           XVSEC1216
+               HILIGHT=UNDERLINE                                        VSEC1217
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1218
+F041128 DFHMDF POS=(15,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1219
+               COLOR=YELLOW,                                           XVSEC1220
+               HILIGHT=OFF                                              VSEC1221
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1222
+F041168 DFHMDF POS=(15,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1223
+               COLOR=GREEN,                                            XVSEC1224
+               HILIGHT=OFF                                              VSEC1225
+        DFHMDF POS=(15,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1226
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1227
+F041190 DFHMDF POS=(15,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1228
+               COLOR=GREEN                                              VSEC1229
+        DFHMDF POS=(15,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1230
+        DFHMDF POS=(15,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1231
+               XINIT=4040,                                             XVSEC1232
+               COLOR=TURQUOISE,                                        XVSEC1233
+               HILIGHT=REVERSE                                          VSEC1234
+        DFHMDF POS=(15,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1235
+        DFHMDF POS=(16,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1236
+               XINIT=4040,                                             XVSEC1237
+               COLOR=TURQUOISE,                                        XVSEC1238
+               HILIGHT=REVERSE                                          VSEC1239
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1240
+F041206 DFHMDF POS=(16,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1241
+               COLOR=YELLOW,                                           XVSEC1242
+               HILIGHT=UNDERLINE                                        VSEC1243
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1244
+F041208 DFHMDF POS=(16,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1245
+               COLOR=YELLOW,                                           XVSEC1246
+               HILIGHT=OFF                                              VSEC1247
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1248
+F041248 DFHMDF POS=(16,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1249
+               COLOR=GREEN,                                            XVSEC1250
+               HILIGHT=OFF                                              VSEC1251
+        DFHMDF POS=(16,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1252
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1253
+F041270 DFHMDF POS=(16,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1254
+               COLOR=GREEN                                              VSEC1255
+        DFHMDF POS=(16,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1256
+        DFHMDF POS=(16,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1257
+               XINIT=4040,                                             XVSEC1258
+               COLOR=TURQUOISE,                                        XVSEC1259
+               HILIGHT=REVERSE                                          VSEC1260
+        DFHMDF POS=(16,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1261
+        DFHMDF POS=(17,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1262
+               XINIT=4040,                                             XVSEC1263
+               COLOR=TURQUOISE,                                        XVSEC1264
+               HILIGHT=REVERSE                                          VSEC1265
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1266
+F041286 DFHMDF POS=(17,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1267
+               COLOR=YELLOW,                                           XVSEC1268
+               HILIGHT=UNDERLINE                                        VSEC1269
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1270
+F041288 DFHMDF POS=(17,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1271
+               COLOR=YELLOW,                                           XVSEC1272
+               HILIGHT=OFF                                              VSEC1273
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1274
+F041328 DFHMDF POS=(17,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1275
+               COLOR=GREEN,                                            XVSEC1276
+               HILIGHT=OFF                                              VSEC1277
+        DFHMDF POS=(17,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1278
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1279
+F041350 DFHMDF POS=(17,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1280
+               COLOR=GREEN                                              VSEC1281
+        DFHMDF POS=(17,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1282
+        DFHMDF POS=(17,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1283
+               XINIT=4040,                                             XVSEC1284
+               COLOR=TURQUOISE,                                        XVSEC1285
+               HILIGHT=REVERSE                                          VSEC1286
+        DFHMDF POS=(17,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1287
+        DFHMDF POS=(18,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1288
+               XINIT=4040,                                             XVSEC1289
+               COLOR=TURQUOISE,                                        XVSEC1290
+               HILIGHT=REVERSE                                          VSEC1291
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1292
+F041366 DFHMDF POS=(18,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1293
+               COLOR=YELLOW,                                           XVSEC1294
+               HILIGHT=UNDERLINE                                        VSEC1295
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1296
+F041368 DFHMDF POS=(18,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1297
+               COLOR=YELLOW,                                           XVSEC1298
+               HILIGHT=OFF                                              VSEC1299
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1300
+F041408 DFHMDF POS=(18,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1301
+               COLOR=GREEN,                                            XVSEC1302
+               HILIGHT=OFF                                              VSEC1303
+        DFHMDF POS=(18,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1304
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1305
+F041430 DFHMDF POS=(18,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1306
+               COLOR=GREEN                                              VSEC1307
+        DFHMDF POS=(18,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1308
+        DFHMDF POS=(18,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1309
+               XINIT=4040,                                             XVSEC1310
+               COLOR=TURQUOISE,                                        XVSEC1311
+               HILIGHT=REVERSE                                          VSEC1312
+        DFHMDF POS=(18,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1313
+        DFHMDF POS=(19,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1314
+               XINIT=4040,                                             XVSEC1315
+               COLOR=TURQUOISE,                                        XVSEC1316
+               HILIGHT=REVERSE                                          VSEC1317
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1318
+F041446 DFHMDF POS=(19,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1319
+               COLOR=YELLOW,                                           XVSEC1320
+               HILIGHT=UNDERLINE                                        VSEC1321
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1322
+F041448 DFHMDF POS=(19,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1323
+               COLOR=YELLOW,                                           XVSEC1324
+               HILIGHT=OFF                                              VSEC1325
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1326
+F041488 DFHMDF POS=(19,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1327
+               COLOR=GREEN,                                            XVSEC1328
+               HILIGHT=OFF                                              VSEC1329
+        DFHMDF POS=(19,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1330
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1331
+F041510 DFHMDF POS=(19,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1332
+               COLOR=GREEN                                              VSEC1333
+        DFHMDF POS=(19,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1334
+        DFHMDF POS=(19,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1335
+               XINIT=4040,                                             XVSEC1336
+               COLOR=TURQUOISE,                                        XVSEC1337
+               HILIGHT=REVERSE                                          VSEC1338
+        DFHMDF POS=(19,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1339
+        DFHMDF POS=(20,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1340
+               XINIT=4040,                                             XVSEC1341
+               COLOR=TURQUOISE,                                        XVSEC1342
+               HILIGHT=REVERSE                                          VSEC1343
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1344
+F041526 DFHMDF POS=(20,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1345
+               COLOR=YELLOW,                                           XVSEC1346
+               HILIGHT=UNDERLINE                                        VSEC1347
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1348
+F041528 DFHMDF POS=(20,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1349
+               COLOR=YELLOW,                                           XVSEC1350
+               HILIGHT=OFF                                              VSEC1351
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1352
+F041568 DFHMDF POS=(20,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1353
+               COLOR=GREEN,                                            XVSEC1354
+               HILIGHT=OFF                                              VSEC1355
+        DFHMDF POS=(20,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1356
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1357
+F041590 DFHMDF POS=(20,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1358
+               COLOR=GREEN                                              VSEC1359
+        DFHMDF POS=(20,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1360
+        DFHMDF POS=(20,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1361
+               XINIT=4040,                                             XVSEC1362
+               COLOR=TURQUOISE,                                        XVSEC1363
+               HILIGHT=REVERSE                                          VSEC1364
+        DFHMDF POS=(20,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1365
+        DFHMDF POS=(21,003),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1366
+               XINIT=4040,                                             XVSEC1367
+               COLOR=TURQUOISE,                                        XVSEC1368
+               HILIGHT=REVERSE                                          VSEC1369
+* CBLDNM LABEL=ADDP-SELECT                                              VSEC1370
+F041606 DFHMDF POS=(21,006),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1371
+               COLOR=YELLOW,                                           XVSEC1372
+               HILIGHT=UNDERLINE                                        VSEC1373
+* CBLDNM LABEL=ADDP-RSC-IDNT                                            VSEC1374
+F041608 DFHMDF POS=(21,008),LENGTH=039,ATTRB=(ASKIP,BRT),              XVSEC1375
+               COLOR=YELLOW,                                           XVSEC1376
+               HILIGHT=OFF                                              VSEC1377
+* CBLDNM LABEL=ADDP-RSC-DESC                                            VSEC1378
+F041648 DFHMDF POS=(21,048),LENGTH=020,ATTRB=(ASKIP,NORM),             XVSEC1379
+               COLOR=GREEN,                                            XVSEC1380
+               HILIGHT=OFF                                              VSEC1381
+        DFHMDF POS=(21,069),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1382
+* CBLDNM LABEL=ADDP-RSC-ACCS                                            VSEC1383
+F041670 DFHMDF POS=(21,070),LENGTH=001,ATTRB=(UNPROT,NORM),            XVSEC1384
+               COLOR=GREEN                                              VSEC1385
+        DFHMDF POS=(21,072),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1386
+        DFHMDF POS=(21,073),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1387
+               XINIT=4040,                                             XVSEC1388
+               COLOR=TURQUOISE,                                        XVSEC1389
+               HILIGHT=REVERSE                                          VSEC1390
+        DFHMDF POS=(21,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1391
+* CBLDNM LABEL=ADDP-MESSAGE                                             VSEC1392
+F041683 DFHMDF POS=(22,003),LENGTH=072,ATTRB=(ASKIP,NORM),             XVSEC1393
+               XINIT=4040,                                             XVSEC1394
+               COLOR=TURQUOISE,                                        XVSEC1395
+               HILIGHT=REVERSE                                          VSEC1396
+        DFHMDF POS=(22,076),LENGTH=000,ATTRB=(ASKIP,BRT)                VSEC1397
+*                                                                       VSEC1398
+        PRINT  ON,GEN                                                   VSEC1399
+        TITLE  'A D D P X X X   ( 0 1 . 0 5 )   -   A D D   P E R M I SXVSEC1400
+                S I O N S   M A P                           '           VSEC1401
+ADDPXXX DFHMDI SIZE=(24,080)                                            VSEC1402
+        PRINT  ON,NOGEN                                                 VSEC1403
+        DFHMDF POS=(07,012),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1404
+               COLOR=YELLOW                                             VSEC1405
+        DFHMDF POS=(08,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1406
+               COLOR=YELLOW                                             VSEC1407
+        DFHMDF POS=(08,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1408
+               COLOR=GREEN                                              VSEC1409
+        DFHMDF POS=(09,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1410
+               COLOR=YELLOW                                             VSEC1411
+        DFHMDF POS=(09,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1412
+               COLOR=GREEN                                              VSEC1413
+        DFHMDF POS=(10,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1414
+               COLOR=YELLOW                                             VSEC1415
+        DFHMDF POS=(10,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1416
+               COLOR=GREEN                                              VSEC1417
+        DFHMDF POS=(11,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1418
+               COLOR=YELLOW                                             VSEC1419
+        DFHMDF POS=(11,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1420
+               COLOR=GREEN                                              VSEC1421
+        DFHMDF POS=(12,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1422
+               COLOR=YELLOW                                             VSEC1423
+        DFHMDF POS=(12,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1424
+               COLOR=GREEN                                              VSEC1425
+        DFHMDF POS=(13,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1426
+               COLOR=YELLOW                                             VSEC1427
+        DFHMDF POS=(13,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1428
+               COLOR=GREEN                                              VSEC1429
+        DFHMDF POS=(14,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1430
+               COLOR=YELLOW                                             VSEC1431
+        DFHMDF POS=(14,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1432
+               COLOR=GREEN                                              VSEC1433
+        DFHMDF POS=(15,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1434
+               COLOR=YELLOW                                             VSEC1435
+        DFHMDF POS=(15,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1436
+               COLOR=GREEN                                              VSEC1437
+        DFHMDF POS=(16,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1438
+               COLOR=YELLOW                                             VSEC1439
+        DFHMDF POS=(16,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1440
+               COLOR=GREEN                                              VSEC1441
+        DFHMDF POS=(17,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1442
+               COLOR=YELLOW                                             VSEC1443
+        DFHMDF POS=(17,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1444
+               COLOR=GREEN                                              VSEC1445
+        DFHMDF POS=(18,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1446
+               COLOR=YELLOW                                             VSEC1447
+        DFHMDF POS=(18,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1448
+               COLOR=GREEN                                              VSEC1449
+        DFHMDF POS=(19,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1450
+               COLOR=YELLOW                                             VSEC1451
+        DFHMDF POS=(19,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1452
+               COLOR=GREEN                                              VSEC1453
+        DFHMDF POS=(20,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1454
+               COLOR=YELLOW                                             VSEC1455
+        DFHMDF POS=(20,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1456
+               COLOR=GREEN                                              VSEC1457
+        DFHMDF POS=(21,006),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1458
+               COLOR=YELLOW                                             VSEC1459
+        DFHMDF POS=(21,070),LENGTH=001,ATTRB=(ASKIP,NORM),             XVSEC1460
+               COLOR=GREEN                                              VSEC1461
+*                                                                       VSEC1462
+        PRINT  ON,GEN                                                   VSEC1463
+        TITLE  'W A I T W I N   ( 0 1 . 0 2 )   -   G E N E R A T I N GXVSEC1464
+                . . .   M E S S A G E   W I N D O W         '           VSEC1465
+WAITWIN DFHMDI SIZE=(24,080)                                            VSEC1466
+        PRINT  ON,NOGEN                                                 VSEC1467
+        DFHMDF POS=(10,029),LENGTH=021,ATTRB=(ASKIP,NORM),             XVSEC1468
+               XINIT=404040404040404040404040404040404040404040,       XVSEC1469
+               COLOR=TURQUOISE,                                        XVSEC1470
+               HILIGHT=REVERSE                                          VSEC1471
+        DFHMDF POS=(10,051),LENGTH=000,ATTRB=(ASKIP,NORM)               VSEC1472
+        DFHMDF POS=(11,029),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1473
+               XINIT=4040,                                             XVSEC1474
+               COLOR=TURQUOISE,                                        XVSEC1475
+               HILIGHT=REVERSE                                          VSEC1476
+        DFHMDF POS=(11,032),LENGTH=015,ATTRB=(ASKIP,NORM),             XVSEC1477
+               XINIT=404040404040404040404040404040                     VSEC1478
+        DFHMDF POS=(11,048),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1479
+               XINIT=4040,                                             XVSEC1480
+               COLOR=TURQUOISE,                                        XVSEC1481
+               HILIGHT=REVERSE                                          VSEC1482
+        DFHMDF POS=(11,051),LENGTH=000,ATTRB=(ASKIP,NORM)               VSEC1483
+        DFHMDF POS=(12,029),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1484
+               XINIT=4040,                                             XVSEC1485
+               COLOR=TURQUOISE,                                        XVSEC1486
+               HILIGHT=REVERSE                                          VSEC1487
+        DFHMDF POS=(12,032),LENGTH=000,ATTRB=(ASKIP,NORM)               VSEC1488
+* CBLDNM LABEL=WAIT-MESSAGE                                             VSEC1489
+F060913 DFHMDF POS=(12,033),LENGTH=013,ATTRB=(ASKIP,BRT),              XVSEC1490
+               INITIAL='Generating...',                                XVSEC1491
+               COLOR=RED,                                              XVSEC1492
+               HILIGHT=BLINK                                            VSEC1493
+        DFHMDF POS=(12,047),LENGTH=000,ATTRB=(ASKIP,NORM)               VSEC1494
+        DFHMDF POS=(12,048),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1495
+               XINIT=4040,                                             XVSEC1496
+               COLOR=TURQUOISE,                                        XVSEC1497
+               HILIGHT=REVERSE                                          VSEC1498
+        DFHMDF POS=(12,051),LENGTH=000,ATTRB=(ASKIP,NORM)               VSEC1499
+        DFHMDF POS=(13,029),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1500
+               XINIT=4040,                                             XVSEC1501
+               COLOR=TURQUOISE,                                        XVSEC1502
+               HILIGHT=REVERSE                                          VSEC1503
+        DFHMDF POS=(13,032),LENGTH=015,ATTRB=(ASKIP,NORM),             XVSEC1504
+               XINIT=404040404040404040404040404040                     VSEC1505
+        DFHMDF POS=(13,048),LENGTH=002,ATTRB=(ASKIP,NORM),             XVSEC1506
+               XINIT=4040,                                             XVSEC1507
+               COLOR=TURQUOISE,                                        XVSEC1508
+               HILIGHT=REVERSE                                          VSEC1509
+        DFHMDF POS=(13,051),LENGTH=000,ATTRB=(ASKIP,NORM)               VSEC1510
+        DFHMDF POS=(14,029),LENGTH=021,ATTRB=(ASKIP,NORM),             XVSEC1511
+               XINIT=404040404040404040404040404040404040404040,       XVSEC1512
+               COLOR=TURQUOISE,                                        XVSEC1513
+               HILIGHT=REVERSE                                          VSEC1514
+        DFHMDF POS=(14,051),LENGTH=000,ATTRB=(ASKIP,NORM)               VSEC1515
+*                                                                       VSEC1516
+        PRINT  ON,GEN                                                   VSEC1517
+        TITLE  'V S E C M S     ( 0 1 . 2 4 )   -   V I E W   S E C U RXVSEC1518
+                I T Y   M A P S E T                         '           VSEC1519
+        DFHMSD TYPE=FINAL                                               VSEC1520
