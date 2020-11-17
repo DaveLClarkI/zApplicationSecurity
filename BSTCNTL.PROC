@@ -1,0 +1,30 @@
+// EXEC   PGM=IDCAMS,SIZE=AUTO                                                  
+   DELETE VSE.BSTCNTL.FILE                                            -         
+          CLUSTER  NOERASE  PURGE                                     -         
+          CATALOG(VSESP.USER.CATALOG)                                           
+   SET MAXCC = 0                                                                
+   DEFINE CLUSTER( NAME('VSE.BSTCNTL.FILE')                           -         
+                   INDEXED                                            -         
+                   FREESPACE(0 0)                                     -         
+                   KEYS(255 4)                                        -         
+                   RECORDSIZE(280 65535)                              -         
+                   NOREPLICATE                                        -         
+                   NOREUSE                                            -         
+                   SHAREOPTIONS(4 3)                                  -         
+                   SPANNED                                            -         
+                   TO(2099366)                                        -         
+                 )                                                    -         
+          DATA   ( NAME('VSE.BSTCNTL.FILE.@D@')                       -         
+                   CYLINDERS(10 10)                                   -         
+                   VOLUMES( DOSRES  SYSWK1  )                         -         
+                   CISZ(4096)                                         -         
+                   RECOVERY                                           -         
+                 )                                                    -         
+          INDEX  ( NAME('VSE.BSTCNTL.FILE.@I@')                       -         
+                   TRACKS(2 2)                                        -         
+                   VOLUMES( DOSRES  SYSWK1  )                         -         
+                   CISZ(4096)                                         -         
+                 )                                                    -         
+          CATALOG(VSESP.USER.CATALOG)                                           
+   IF MAXCC > 0 THEN CANCEL JOB                                                 
+/* EOD                                                                          
