@@ -1,0 +1,28 @@
+// EXEC   PGM=IDCAMS,SIZE=AUTO                                                  
+   DELETE VSE.LDAP.USER.MAPPING                                       -         
+          CLUSTER  NOERASE  PURGE                                     -         
+          CATALOG(VSESP.USER.CATALOG)                                           
+   SET MAXCC = 0                                                                
+   DEFINE CLUSTER( NAME('VSE.LDAP.USER.MAPPING')                      -         
+                   INDEXED                                            -         
+                   FREESPACE(15 7)                                    -         
+                   KEYS(66 0)                                         -         
+                   RECORDSIZE(250 250)                                -         
+                   NOREPLICATE                                        -         
+                   NOREUSE                                            -         
+                   SHAREOPTIONS(4 3)                                  -         
+                 )                                                    -         
+          DATA   ( NAME('VSE.LDAP.USER.MAPPING.@D@')                  -         
+                   CYLINDERS(1 1)                                     -         
+                   VOLUMES( SYSWK1  DOSRES  )                         -         
+                   CISZ(4096)                                         -         
+                   RECOVERY                                           -         
+                 )                                                    -         
+          INDEX  ( NAME('VSE.LDAP.USER.MAPPING.@I@')                  -         
+                   TRACKS(1 1)                                        -         
+                   VOLUMES( SYSWK1  DOSRES  )                         -         
+                   CISZ(4096)                                         -         
+                 )                                                    -         
+          CATALOG(VSESP.USER.CATALOG)                                           
+   IF MAXCC > 0 THEN CANCEL JOB                                                 
+/* EOD                                                                          

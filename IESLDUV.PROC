@@ -1,0 +1,10 @@
+// DLBL   IJSYSUC,'VSESP.USER.CATALOG',,VSAM                                    
+// EXEC   PROC=IESLDU1                                                          
+// EXEC   PGM=IDCAMS,SIZE=AUTO                                                  
+   BLDINDEX -                                                                   
+          INDATASET(VSE.LDAP.USER.MAPPING) -                                    
+          OUTDATASET(VSE.LDAP.VSE.USER.AIX) -                                   
+          CATALOG(VSESP.USER.CATALOG)                                           
+   IF MAXCC > 4 THEN CANCEL JOB                                                 
+   SET MAXCC = 0                                                                
+/* EOD                                                                          

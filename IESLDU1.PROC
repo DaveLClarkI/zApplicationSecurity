@@ -1,0 +1,36 @@
+// EXEC   PGM=IDCAMS,SIZE=AUTO                                                  
+   DELETE VSE.LDAP.VSE.USER.AIX                                       -         
+          AIX      NOERASE  PURGE                                     -         
+          CATALOG(VSESP.USER.CATALOG)                                           
+   SET MAXCC = 0                                                                
+   DEFINE AIX    ( NAME('VSE.LDAP.VSE.USER.AIX')                      -         
+                   RELATE('VSE.LDAP.USER.MAPPING')                    -         
+                   FREESPACE(5 5)                                     -         
+                   KEYS(8 70)                                         -         
+                   RECORDSIZE(79 7999)                                -         
+                   NOREPLICATE                                        -         
+                   NOREUSE                                            -         
+                   SHAREOPTIONS(4 3)                                  -         
+                   NONUNIQUEKEY                                       -         
+                   UPGRADE                                            -         
+                 )                                                    -         
+          DATA   ( NAME('VSE.LDAP.VSE.USER.AIX.@D@')                  -         
+                   CYLINDERS(1 1)                                     -         
+                   VOLUMES( SYSWK1  DOSRES  )                         -         
+                   CISZ(8192)                                         -         
+                   SPEED                                              -         
+                 )                                                    -         
+          INDEX  ( NAME('VSE.LDAP.VSE.USER.AIX.@I@')                  -         
+                   TRACKS(1 1)                                        -         
+                   VOLUMES( SYSWK1  DOSRES  )                         -         
+                   CISZ(1024)                                         -         
+                 )                                                    -         
+          CATALOG(VSESP.USER.CATALOG)                                           
+   IF MAXCC > 0 THEN CANCEL JOB                                                 
+   DEFINE  PATH  ( NAME('VSE.LDAP.VSE.USER.PATH')                     -         
+                   PATHENTRY('VSE.LDAP.VSE.USER.AIX')                 -         
+                   UPDATE                                             -         
+                 )                                                    -         
+          CATALOG(VSESP.USER.CATALOG)                                           
+   IF MAXCC > 0 THEN CANCEL JOB                                                 
+/* EOD                                                                          
