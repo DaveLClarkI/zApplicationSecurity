@@ -1,0 +1,20 @@
+WINSCRTY_COMM  DS  CL58                                                         
+         ORG   WINSCRTY_COMM                                                    
+SCRTY_USERID   DS  CL8                                                          
+SCRTY_CONUM    DS  CL5                                                          
+SCRTY_ACCESS   DS  CL1                                                          
+SCRTY_SVCRGN   DS  CL2                                                          
+SCRTY_ALTRGN   DS  CL2                                                          
+SCRTY_RPTRMT   DS  CL3                                                          
+SCRTY_ALTRMT   DS  CL3                                                          
+SCRTY_DFTPTR   DS  CL4                                                          
+SCRTY_WINFUNC  DS  CL3                                                          
+SCRTY_WINUNIT  DS  CL10                                                         
+SCRTY_WINORG   DS  CL5                                                          
+SCRTY_WINPOS   DS  CL5                                                          
+SCRTY_WINDIR   DS  CL1                                                          
+SCRTY_OLDDAP   DS  CL1                                                          
+SCRTY_OLDCLS   DS  CL2                                                          
+SCRTY_OLDGRP   DS  CL2                                                          
+SCRTY_OLDLVL   DS  CL1                                                          
+         ORG                                                                    
